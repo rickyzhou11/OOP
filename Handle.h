@@ -1,5 +1,5 @@
-fndef Handle1_h
-#define Handle1_h
+#ifndef Handle_h
+#define Handle_h
 
 #include <algorithm> // swap
 
@@ -50,4 +50,4 @@ class Handle {
         void swap (Handle& that) {
             std::swap(_p, that._p);}};
 
-#endif // Handle1_h
+#endif // Handle_h
