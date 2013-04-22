@@ -97,8 +97,28 @@ struct board {
 	}
 	 
         //-------------------
-        // play
+        // output
         //------------------
 
 	template <typename T> 
+	void Life<T>::output(ostream& out){
+
+		out << "generation = " << gen << ", Population = " << pop << endl;	
+		
+		for(int i =0; i < num_row(); i++){
+		
+			 for(int j =0; j < num_col(); j++)
+				
+				out << board[i][j];
+	
+				out << endl;
+		}
+		
+		out << endl;
+	}
+
+
+
+
+	}
 	
