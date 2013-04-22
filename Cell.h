@@ -16,13 +16,23 @@ struct Cell : Handle<AbstractCell> {
 	{}
 
 
-int get_neighbor(){
+int update_status(){
 	
-	return get()
+	return get()-> update_status();
 
 }
 
+int set_num_neighbors(){
+	
+	return get()-> set_num_neighbors();
 
+}
+
+int mutate(){
+	
+	return get()-> mutate();
+
+}
 
 
 
