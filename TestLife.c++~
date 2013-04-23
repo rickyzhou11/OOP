@@ -1,0 +1,85 @@
+/*
+To test the program:
+    % ls /usr/include/cppunit/
+    ...
+    TestFixture.h
+    ...
+    % locate libcppunit.a
+    /usr/lib/libcppunit.a
+    % g++ -lcppunit -ldl -pedantic -std=c++0x -Wall Darwin.c++ TestDarwin.c++ -o TestDarwin.c++.app
+    % valgrind TestDarwin.c++.app >& TestDarwin.c++.out
+*/
+
+// --------
+// includes
+// --------
+
+#include <iostream> // cout, endl
+#include <sstream>  // istringtstream, ostringstream
+#include <string>   // ==
+
+#include "cppunit/extensions/HelperMacros.h" // CPPUNIT_TEST, CPPUNIT_TEST_SUITE, CPPUNIT_TEST_SUITE_END
+#include "cppunit/TestFixture.h"             // TestFixture
+#include "cppunit/TextTestRunner.h"          // TextTestRunner
+
+#define private public
+#define protected public
+#define class struct
+#include "Darwin.h"
+
+// -----------
+// TestDarwin
+// -----------
+
+struct TestDarwin : CppUnit::TestFixture {
+        
+        //dw.simulate();
+    
+
+    // void test_Creature1() {
+    //    }
+
+
+    //*************//
+    // Board Tests //
+    //*************//
+    void test_Board() {
+
+    }
+
+    /* Board is_enemy tests*/
+    void test_Board_is_enemy1()
+    {
+        Food f = Food();
+        Hopper h = Hopper();
+        Rover r = Rover();
+        Species* sp;
+        sp = &h;
+        Creature c1 = Creature(3,3, NORTH, sp);
+        sp = &f;
+        Creature c5 = Creature(0,0, EAST, sp);
+        sp = &r;
+        Creature c2 = Creature(1,1, SOUTH, sp);
+        Board b = Board(8, 8);
+        b.place_piece(3, 3, &c1, NORTH); 
+        b.place_piece(0, 0, &c5, EAST);
+        b.place_piece(1,1, &c2, SOUTH);
+        DarwinsWorld dw = DarwinsWorld(8, 8, 5, 1, &b);
+        CPPUNIT_ASSERT(b.is_enemy(3,3, &c2) == true);
+    }
+    }:
+// ----
+// main
+// ----
+
+int main () {
+    using namespace std;
+    ios_base::sync_with_stdio(false);  // turn off synchronization with C I/O
+    cout << "TestLife.c++" << endl;
+
+    CppUnit::TextTestRunner tr;
+    tr.addTest(TestDarwin::suite());
+    tr.run();
+
+    cout << "Done." << endl;
+    return 0;}
