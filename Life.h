@@ -1,15 +1,16 @@
-#ifndef Handle_h
-#define Handle_h
+#ifndef Life_h
+#define Life_h
 #include <iostream>
 #include<string>
 #include<vector>
 #include<stdexcept>
 #include <algorithm>
 
+
 using namespace std;
  
 
-template <typename  T>
+template <typename T>
  class Life{
 
 	public:
@@ -35,8 +36,6 @@ template <typename  T>
 		void output(ostream& out); 
 
 };
-
-
 	template <typename T>
 	Life<T>::Life(iostream& in){
 
@@ -68,7 +67,7 @@ template <typename  T>
 
 			}
 		
-		
+			
 		}
 
 	}
@@ -125,6 +124,7 @@ template <typename  T>
 		
 		out << endl;
 	}
+
 
 
 #endif

@@ -2,7 +2,7 @@
 #define ConwayCell_h
 
 #include<iostream> 
-#include "AbstractCell.h"
+
 
 class ConwayCell  : public AbstractCell {
 	

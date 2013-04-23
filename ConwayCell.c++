@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include "ConwayCell.h" 
+#include "AbstractCell.h"
 
 
 	ConwayCell::ConwayCell(char c) : 
@@ -81,11 +82,13 @@
 		if( !_alive && (_num_neighbors==3) ){
 			_alive = true;
 			_c = "*";
+			_num_neighbors = 0;
 		}
 		if( alive){
 			if(_num_neighbors < 2 || _num_neighbors > 3 ){
 				_alive= false;
 				_c = "."; 
+				_num_neighbors = 0;
 			}
 		}
 	}

@@ -1,9 +1,7 @@
 #ifndef AbstractCell_h
 #define AbstractCell_h
-
 #include "Cell.h"
-#include "Life.h"
-#include "Handle.h"
+
 class AbstractCell {
 
 private:
@@ -11,17 +9,18 @@ private:
 	  
 
 protected:
-	
-public: 
 	int _num_neighbors;
 	int _age;
 	char  _c; 
 	bool _alive;
 	
+public: 
+	
+	
 
-	AbstractCell(char c){
-		_c = c;
-	}
+	// AbstractCell(char c){
+	// 	_c = c;
+	// }
 	// ------------
     // update_status
     // ------------
