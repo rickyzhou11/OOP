@@ -11,13 +11,6 @@
 #include "Life.h"
 #include "Handle.h"
 
-
-
-=======
-#include "ConwayCell.h"
-#include "FredkinCell.h"
->>>>>>> ba4cdc948aaf30d793165d365e9f49e98ba27e39
-
 struct Cell : Handle<AbstractCell> {
 	Cell (AbstractCell* p) :
 		Handle<AbstractCell> (p)
