@@ -3,7 +3,7 @@
 
 #include "Cell.h"
 #include "Life.h"
-
+#include "Handle.h"
 class AbstractCell {
 
 private:
@@ -48,4 +48,4 @@ public:
 
 };
 
-#endif }
+#endif 

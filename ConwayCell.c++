@@ -3,9 +3,9 @@
 
 #include<iostream>
 #include "ConwayCell.h" 
-#include "life.h"
 
-	ConwayCell::ConwayCell (char c) : 
+
+	ConwayCell::ConwayCell(char c) : 
 			AbstractCell(),
 			_num_neighbors (0),
 			_age (0),

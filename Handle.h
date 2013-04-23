@@ -1,6 +1,7 @@
 #ifndef Handle_h
 #define Handle_h
 
+#include "AbstractCell.h"
 #include <algorithm> // swap
 
 template <typename T>
