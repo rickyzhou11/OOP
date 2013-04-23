@@ -12,21 +12,23 @@ using namespace std;
 template <typename  T>
  class Life{
 
-	private:
+	public:
 
 		vector< vector<T> > board; 
 
-		int _gen; 
+		int gen; 
 
-		int _pop;
+		int pop;
 
-	public:
+		int row;
 
-		int _row;
+		int col;	
+	
+		int num_row;
 
-		int _col;	
-		
-		Life(istream& in);
+		int num_col;
+	
+		Life(iostream& in);
 
 		void play(int total_turns);
 
@@ -34,12 +36,9 @@ template <typename  T>
 
 };
 
-template <typename T> 
-
-typedef std::vector< vector<T> > type;
 
 	template <typename T>
-	Life<T>::Life(istream& in){
+	Life<T>::Life(iostream& in){
 
 		int num_row;
 
@@ -50,9 +49,9 @@ typedef std::vector< vector<T> > type;
 
 		gen = 0;
 
-		int >> num_row;
+		in >> num_row;
 
-		int >> num_col;
+		in >> num_col;
 	
 		for(int row = 0; row < num_row; row++){
 
@@ -79,14 +78,15 @@ typedef std::vector< vector<T> > type;
 	//------------------
  
 	template <typename T>
-	void Life<T>::play(int total_turns, int print_num){
+	void Life<T>::play(int total_turns){
  		int current_turn = 0;
 
 		while(total_turns > current_turn){
-			if(current_turn % print_num)
-					output();
+	
 			for(int i =0; i< num_row; i++){
+			
 				for(int j = 0; j< num_col; j++){
+	
 					board[i][j]->set_num_neighbors(i,j);
 					}
 				} 
@@ -127,7 +127,4 @@ typedef std::vector< vector<T> > type;
 	}
 
 
-
-
-	}
 #endif
