@@ -2,7 +2,8 @@
 //Cell.h
 //
 
-
+#ifndef Cell_h
+#define Cell_h
 #include <cassert> // assert
 #include <iostream> // cout, endl
 
@@ -41,4 +42,4 @@ int mutate(){
 
 
 
-
+#endif

@@ -90,4 +90,6 @@ Class ConwayCell  : public AbstractCell {
 	}
 		
 }
+
+#endif
 	

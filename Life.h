@@ -1,7 +1,10 @@
+#ifndef Handle_h
+#define Handle_h
 #include <iostream>
 #include<string>
 #include<vector>
 #include<stdexcept>
+#include <algorithm>
 
 using namespace std;
  
@@ -127,4 +130,4 @@ typedef std::vector< vector<T> > type;
 
 
 	}
-	
+#endif
