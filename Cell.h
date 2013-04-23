@@ -15,7 +15,12 @@ struct Cell : Handle<AbstractCell> {
 		Handle<AbstractCell> (p)
 	{}
 
-
+Cell(char c){
+	if( c == "*" || c == ".")
+		ConwayCell cell = new ConwayCell(c);
+	else
+		FredkinCell cell = new FredkinCell(c);
+}
 int update_status(){
 	
 	return get()-> update_status();

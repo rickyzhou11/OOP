@@ -32,14 +32,8 @@ template <typename  T>
 };
 
 template <typename T> 
-struct board {
-	 
-	typedef std::vector< vector<T> > type;
 
-	
-};
-
-
+typedef std::vector< vector<T> > type;
 
 	template <typename T>
 	Life<T>::Life(istream& in){
@@ -47,10 +41,11 @@ struct board {
 		int num_row;
 
 		int num_col;
+		char cell;
 
 		pop = 0;
 
-		gen = 0'
+		gen = 0;
 
 		int >> num_row;
 
@@ -62,13 +57,12 @@ struct board {
 
 			for(int col = 0; col < num_col; col++){
 
-				char cell;
-	
 				in >> cell; 
 
 				board[row].push_back(T(cell));
 			
-				if(board[row][col]) pop++;	
+				if(board[row][col]._alive) 
+					pop++;	
 
 			}
 		
@@ -82,16 +76,28 @@ struct board {
 	//------------------
  
 	template <typename T>
-	void Life<T>::play(int total_turns){
+	void Life<T>::play(int total_turns, int print_num){
  		int current_turn = 0;
-		while(total_turns > current_turn){
 
-			
-			rungame();
+		while(total_turns > current_turn){
+			if(current_turn % print_num)
+					output();
+			for(int i =0; i< num_row; i++){
+				for(int j = 0; j< num_col; j++){
+					board[i][j]->set_num_neighbors(i,j);
+					}
+				} 
+
+			for(int i =0; i< num_row; i++){
+				for(int j = 0; j< num_col; j++){
+					board[i][j]->update_status;
+				} 
+
+			}
 			current_turn++;
-			
 
 		}
+			output();
 
 
 	}

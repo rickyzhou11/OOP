@@ -7,16 +7,20 @@
 class AbstractCell {
 
 private:
-	int _num_neighbors;
-	int _age; 
-	bool _alive;  
+	
+	  
 
 protected:
-	vector<vector<Typename T> > life_board; 
-
+	
 public: 
-	AbstractCell(bool alive){
-		_alive = alive;
+	int _num_neighbors;
+	int _age;
+	char  _c; 
+	bool _alive;
+	
+
+	AbstractCell(char c){
+		_c = c;
 	}
 	// ------------
     // update_status
@@ -38,7 +42,7 @@ public:
 **/
 	virtual void set_num_neighbors(int x, int y) = 0; 
 
- 
+ 	virtual void mutate() = 0; 
 	
 
 
