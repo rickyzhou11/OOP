@@ -5,6 +5,9 @@
 #include "ConwayCell.h" 
 #include "AbstractCell.h"
 
+#include "Life.h"
+
+
 
 	ConwayCell::ConwayCell(char c) : 
 			AbstractCell(),
@@ -93,5 +96,5 @@
 		}
 	}
 		
-
+}
 	
