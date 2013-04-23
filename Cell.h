@@ -18,9 +18,9 @@ struct Cell : Handle<AbstractCell> {
 
 Cell(char c){
 	if( c == "*" || c == ".")
-		Cell cell = new ConwayCell(c);
+		AbstractCell* cell = new ConwayCell(c);
 	else
-		Cell cell = new FredkinCell(c);
+		AbstractCell* cell = new FredkinCell(c);
 }
 int update_status(){
 	

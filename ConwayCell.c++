@@ -1,9 +1,9 @@
 
 
 
-#include<iostream>
+#include <iostream>
 
-#include "AbstractCell.h"
+
 #include "ConwayCell.h" 
 
 

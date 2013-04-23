@@ -1,8 +1,8 @@
 #ifndef ConwayCell_h
 #define ConwayCell_h
 
-#include<iostream> 
-
+#include <iostream> 
+#include "AbstractCell.h"
 
 class ConwayCell : public AbstractCell {
 	

@@ -1,9 +1,10 @@
 #ifndef Life_h
 #define Life_h
 #include <iostream>
-#include<string>
-#include<vector>
-#include<stdexcept>
+
+#include <string>
+#include <vector>
+#include <stdexcept>
 #include <algorithm>
 
 
