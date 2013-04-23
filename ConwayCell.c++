@@ -3,10 +3,9 @@
 
 #include<iostream>
 #include "ConwayCell.h" 
-<<<<<<< HEAD
+
 #include "Life.h"
-=======
->>>>>>> 43ac65d8b15011ed08457f2e650e23ddcf788036
+
 
 
 	ConwayCell::ConwayCell(char c) : 
@@ -94,5 +93,5 @@
 		}
 	}
 		
-
+}
 	

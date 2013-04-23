@@ -56,9 +56,10 @@ int main () {
         Print the 2500th grid.
         */
 	
-	Life test1 = new Life<ConwayCell>();
+	ifstream x;
+	Life<ConwayCell> test1(x) ;
 	test1.Life("RunLifeConwayCell.in");
-	test1.play(100, 10); 
+	test1.play(100); 
 	
 	
 	
