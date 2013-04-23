@@ -1,8 +1,8 @@
 #ifndef AbstractCell_h
 #define AbstractCell_h
 
-#include Cell.h
-#include Life.h
+#include "Cell.h"
+#include "Life.h"
 
 class AbstractCell {
 
