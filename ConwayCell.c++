@@ -2,10 +2,9 @@
 
 
 #include<iostream>
-#include "ConwayCell.h" 
-#include "AbstractCell.h"
 
-#include "Life.h"
+#include "AbstractCell.h"
+#include "ConwayCell.h" 
 
 
 

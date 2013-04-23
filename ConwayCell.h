@@ -4,14 +4,16 @@
 #include<iostream> 
 
 
-class ConwayCell  : public AbstractCell {
+class ConwayCell : public AbstractCell {
 	
-	public:
-		ConwayCell (char c);
-
-	void update_status() ;
+public:
+	ConwayCell (char c);
 
 	void set_num_neighbors(int row, int col);
+
+	void update_status();
+
+	
 
 		
 };
