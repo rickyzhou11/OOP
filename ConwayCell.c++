@@ -3,7 +3,7 @@
 
 #include<iostream>
 #include "ConwayCell.h" 
-#include "life.h"
+#include "Life.h"
 
 	ConwayCell::ConwayCell (char c) : 
 			AbstractCell(),

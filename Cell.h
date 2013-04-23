@@ -10,6 +10,8 @@
 #include "Handle.h"
 #include "Life.h"
 #include "AbstractCell.h"
+#include "ConwayCell.h"
+#include "FredkinCell.h"
 
 struct Cell : Handle<AbstractCell> {
 	Cell (AbstractCell* p) :
