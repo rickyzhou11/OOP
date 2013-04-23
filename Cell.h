@@ -6,10 +6,10 @@
 #define Cell_h
 #include <cassert> // assert
 #include <iostream> // cout, endl
-#include "AbstractCell.h"
-<<<<<<< HEAD
 #include "Life.h"
 #include "Handle.h"
+#include "AbstractCell.h"
+
 
 struct Cell : Handle<AbstractCell> {
 	Cell (AbstractCell* p) :
