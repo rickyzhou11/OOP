@@ -87,7 +87,7 @@ template <typename T>
 			
 				for(int j = 0; j< num_col; j++){
 					board_copy = copy_board();
-					board[i][j]->set_num_neighbors(i,j, board_copy, num_row, num_col);
+					board[i][j]->set_num_neighbors(i , j, board_copy, num_row, num_col);
 					}
 				} 
 

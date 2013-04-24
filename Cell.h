@@ -30,7 +30,7 @@ int update_status(){
 
 int set_num_neighbors(){
 	
-	return get()-> set_num_neighbors(int x, int y);
+	return get()-> set_num_neighbors(int row, int col, vector<vector<char> > board_copy, int board_row, int board_col);
 
 }
 
