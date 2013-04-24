@@ -2,10 +2,8 @@
 
 
 #include <iostream>
-
-
 #include "ConwayCell.h" 
-
+#include <vector>
 
 
 	ConwayCell::ConwayCell(char c) : 
@@ -18,7 +16,7 @@
 			}
 			
 
-	void ConwayCell::set_num_neighbors(int row, int col, vector<vector<char> > board_copy, int board_row, int board_col){ 
+	void ConwayCell::set_num_neighbors(int row, int col, vector< vector<char> > board_copy, int board_row, int board_col){ 
 
 		char c;
 		//check the life status of the cell above it
@@ -43,7 +41,7 @@
 		//check below current cell
 		if( (row+1)< board_row){
 			c = board_copy[row+1][col]; 
-			if(c-> _alive)
+			if(c == 'a')
 				++_num_neighbors;		
 		}
 

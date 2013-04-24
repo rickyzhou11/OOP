@@ -1,5 +1,8 @@
 #ifndef AbstractCell_h
 #define AbstractCell_h
+#include <vector>
+
+using namespace std;
 
 class AbstractCell {
 
@@ -39,7 +42,7 @@ public:
 * @param x - the row that it is on
 * @param y - the column that it is on
 **/
-	virtual void set_num_neighbors(int row, int col, vector<vector<char> > board_copy, int board_row, int board_col) = 0; 
+	virtual void set_num_neighbors(int row, int col, vector< vector<char> > board_copy, int board_row, int board_col) = 0; 
 
  	virtual void mutate() = 0; 
 	

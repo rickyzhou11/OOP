@@ -29,7 +29,6 @@ To document the program:
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
 #include <stdexcept> // invalid_argument, out_of_range
-#include "Life.h"
 #include <fstream>
 // ----
 // main
@@ -55,7 +54,7 @@ int main () {
         Simulate 2177 moves.
         Print the 2500th grid.
         */
-	ifstream Life("RunLifeConwayCell.in");
+	ifstream Life("RunLifeConway.in");
 	Life<ConwayCell> test1(x) ;
 	test1.Life();
 	test1.play(100); 

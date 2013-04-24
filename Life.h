@@ -36,9 +36,8 @@ template <typename T>
 
 		void output(ostream& out); 
 
-};
-	template <typename T>
-	Life<T>::Life(iostream& in){
+
+	Life(iostream& in){
 
 		int num_row;
 
@@ -77,8 +76,8 @@ template <typename T>
 	// play
 	//------------------
  
-	template <typename T>
-	void Life<T>::play(int total_turns){
+	
+	void play(int total_turns){
  		int current_turn = 0;
  		vector<vector<char> > board_copy;
 		while(total_turns > current_turn){
@@ -109,8 +108,8 @@ template <typename T>
         // output
         //------------------
 
-	template <typename T> 
-	void Life<T>::output(ostream& out){
+	
+	void output(ostream& out){
 
 		out << "generation = " << gen << ", Population = " << pop << endl;	
 		
@@ -127,9 +126,9 @@ template <typename T>
 	}
 
 	
-	vector<vector<char> > Life<T>::copy_board(){
+	vector<vector<char> > copy_board(){
 
-		vector<vector<char> > board_copy; 
+		vector< vector<char> > board_copy; 
 
 		for(int i = 0; i < num_row; i++){
 			board_copy.push_back(vector<char>);
@@ -141,7 +140,10 @@ template <typename T>
 			}
 
 		}
+		return board_copy;
 
 	}
+
+};
 
 #endif

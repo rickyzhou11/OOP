@@ -10,6 +10,7 @@
 #include "Handle.h"
 #include "AbstractCell.h"
 
+using namespace std;
 
 struct Cell : Handle<AbstractCell> {
 	Cell (AbstractCell* p) :
@@ -30,7 +31,7 @@ int update_status(){
 
 int set_num_neighbors(){
 	
-	return get()-> set_num_neighbors(int row, int col, vector<vector<char> > board_copy, int board_row, int board_col);
+	return get()-> set_num_neighbors(int row, int col, vector< vector<char> > board_copy, int board_row, int board_col);
 
 }
 
