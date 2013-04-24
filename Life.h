@@ -6,6 +6,7 @@
 #include <vector>
 #include <stdexcept>
 #include <algorithm>
+#include <fstream>
 
 
 using namespace std;
@@ -16,7 +17,7 @@ template <typename T>
 
 	public:
 
-		vector< vector<T> > board; 
+		vector< vector<T*> > board; 
 
 		int gen; 
 
@@ -30,14 +31,12 @@ template <typename T>
 
 		int num_col;
 	
-		Life(iostream& in);
 
-		void play(int total_turns);
+	Life(string file){
 
-		void output(ostream& out); 
+		ifstream in;
 
-
-	Life(iostream& in){
+		in.open(file);
 
 		int num_row;
 
@@ -54,15 +53,16 @@ template <typename T>
 	
 		for(int row = 0; row < num_row; row++){
 
-			board.push_back(vector<T>());
+			board.push_back(vector<T*>());
 
 			for(int col = 0; col < num_col; col++){
 
-				in >> cell; 
-
+				in >> cell;
+				cout << "IN LIFE CONSTRUCTOR: " << cell << endl;  
+				//T* cell_ptr = &;
 				board[row].push_back(T(cell));
 			
-				if(board[row][col]._alive) 
+				if(board[row][col]->_alive) 
 					pop++;	
 
 			}
@@ -96,10 +96,10 @@ template <typename T>
 				} 
 
 			}
-			current_turn++;
+			++current_turn;
 
 		}
-			output();
+		
 
 
 	}
@@ -109,20 +109,23 @@ template <typename T>
         //------------------
 
 	
-	void output(ostream& out){
+	void output(string file){
 
+		ofstream out;
+		out.open(file);
 		out << "generation = " << gen << ", Population = " << pop << endl;	
 		
-		for(int i =0; i < num_row(); i++){
+		for(int i =0; i < num_row; i++){
 		
-			 for(int j =0; j < num_col(); j++)
-				
-				out << board[i][j];
+			 for(int j =0; j < num_col; j++)
+				out << board[i][j]->get_char();
+
 	
-				out << endl;
+			out << "\n";
 		}
 		
-		out << endl;
+		out.close();
+
 	}
 
 	
@@ -131,7 +134,7 @@ template <typename T>
 		vector< vector<char> > board_copy; 
 
 		for(int i = 0; i < num_row; i++){
-			board_copy.push_back(vector<char>);
+			board_copy.push_back(vector<char>());
 			for(int j= 0; j< num_col; j++){
 				if(board[i][j]->alive())
 					board_copy[i].push_back('a');

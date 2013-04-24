@@ -16,6 +16,7 @@ public:
 
 	void update_status();
 
+	ConwayCell* clone() ;
 	
 
 		

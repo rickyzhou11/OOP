@@ -11,19 +11,24 @@ private:
 	  
 
 protected:
+	
+	
+public: 
 	int _num_neighbors;
 	int _age;
 	char  _c; 
 	bool _alive;
-	
-public: 
-	
 	
 
 	AbstractCell(){
 		_num_neighbors = 0;
 		_age = 0;
 	}
+
+	virtual ~AbstractCell()
+	{}
+
+	virtual AbstractCell* clone() const = 0;
 	// ------------
     // update_status
     // ------------
@@ -44,12 +49,14 @@ public:
 **/
 	virtual void set_num_neighbors(int row, int col, vector< vector<char> > board_copy, int board_row, int board_col) = 0; 
 
- 	virtual void mutate() = 0; 
+ 	//virtual void mutate() = 0; 
 	
 	bool alive(){
 		return _alive;
 	}
-
+	char get_char(){
+		return _c;
+	}
 
 };
 
