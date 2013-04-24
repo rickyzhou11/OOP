@@ -17,7 +17,7 @@ struct Cell : Handle<AbstractCell> {
 	{}
 
 Cell(char c){
-	if( c == "*" || c == ".")
+	if( c == '*' || c == '.')
 		AbstractCell* cell = new ConwayCell(c);
 	else
 		AbstractCell* cell = new FredkinCell(c);
@@ -34,9 +34,10 @@ int set_num_neighbors(){
 
 }
 
-int mutate(){
-	
-	return get()-> mutate();}
+ConwayCell& mutate(){
+		
+		get->mutate();
+	}
 
 };
 

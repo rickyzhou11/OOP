@@ -80,20 +80,20 @@ template <typename T>
 	template <typename T>
 	void Life<T>::play(int total_turns){
  		int current_turn = 0;
-
+ 		vector<vector<char> > board_copy;
 		while(total_turns > current_turn){
 	
 			for(int i =0; i< num_row; i++){
 			
 				for(int j = 0; j< num_col; j++){
-	
-					board[i][j]->set_num_neighbors(i,j);
+					board_copy = copy_board();
+					board[i][j]->set_num_neighbors(i,j, board_copy, num_row, num_col);
 					}
 				} 
 
 			for(int i =0; i< num_row; i++){
 				for(int j = 0; j< num_col; j++){
-					board[i][j]->update_status;
+					board[i][j]->update_status();
 				} 
 
 			}
@@ -126,6 +126,22 @@ template <typename T>
 		out << endl;
 	}
 
+	template <typename T>
+	vector<vector<char> > Life<T>::copy_board(){
 
+		vector<vector<char> > board_copy; 
+
+		for(int i = 0; i < num_row; i++){
+			board_copy.push_back(vector<char>);
+			for(int j= 0; j< num_col; j++){
+				if(board[i][j]->alive())
+					board_copy[i].push_back('a');
+				else
+					board_copy[i].push_back('d');
+			}
+
+		}
+
+	}
 
 #endif

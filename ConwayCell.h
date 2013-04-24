@@ -4,6 +4,7 @@
 #include <iostream> 
 #include "AbstractCell.h"
 
+
 class ConwayCell : public AbstractCell {
 	
 public:

@@ -1,6 +1,6 @@
 #ifndef AbstractCell_h
 #define AbstractCell_h
-#include "Cell.h"
+#include "Life.h"
 
 class AbstractCell {
 
@@ -18,9 +18,10 @@ public:
 	
 	
 
-	// AbstractCell(char c){
-	// 	_c = c;
-	// }
+	AbstractCell(){
+		_num_neighbors = 0;
+		_age = 0;
+	}
 	// ------------
     // update_status
     // ------------
@@ -39,10 +40,13 @@ public:
 * @param x - the row that it is on
 * @param y - the column that it is on
 **/
-	virtual void set_num_neighbors(int x, int y) = 0; 
+	virtual void set_num_neighbors(int row, int col, vector<vector<char> > board, int board_row, int board_col) = 0; 
 
  	virtual void mutate() = 0; 
 	
+	bool alive(){
+		return _alive;
+	}
 
 
 };
