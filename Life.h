@@ -1,7 +1,7 @@
 #ifndef Life_h
 #define Life_h
-#include <iostream>
 
+#include <iostream>
 #include <string>
 #include <vector>
 #include <stdexcept>
@@ -126,7 +126,7 @@ template <typename T>
 		out << endl;
 	}
 
-	template <typename T>
+	
 	vector<vector<char> > Life<T>::copy_board(){
 
 		vector<vector<char> > board_copy; 
