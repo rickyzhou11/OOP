@@ -64,7 +64,8 @@ void FredkinCell:: set_alive(){
 void FredkinCell::increase_age(){
 	if(_alive)
 		++age;
-}
+	if(age > 9)
+}		_c = "+";
 
 
 
