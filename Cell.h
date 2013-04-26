@@ -20,17 +20,10 @@ struct Cell : Handle<AbstractCell> {
 
 	Cell (AbstractCell* p) :
 		Handle<AbstractCell> (p)
-	{}
+	{
 
+	}
 
-
-Cell(char c)
-{
-	if( c == '*' || c == '.')
-		AbstractCell cell = new ConwayCell(c);
-	else
-		AbstractCell cell = new FredkinCell(c);
-}
 
 char get_char(){
 	
@@ -43,14 +36,20 @@ bool is_alive(){
 }
 
 void set_alive(){
-	get()->set_alive();
+	return get()->set_alive();
 }
 
-// void mutate(){
-// 	return get()-> mutate();
-// }
+void mutate(){
 
+	Handle<AbstractCell new_cell(new ConwayCell('*'));
+	swap(new_cell);
 
+}
+
+bool need_to_mutate(){
+
+	return get()->need_to_mutate();
+}
 
 };
 

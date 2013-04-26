@@ -37,11 +37,11 @@ char ConwayCell::get_char(){
 	return _c;
 }
 
-bool ConwayCell:: is_alive(){
+bool ConwayCell::is_alive(){
 	return _alive;
 }
 
-void ConwayCell:: set_alive(){
+void ConwayCell::set_alive(){
 	if(_alive){
 		_alive = false;
 		_c='.';
@@ -49,6 +49,14 @@ void ConwayCell:: set_alive(){
 		_alive = true;
 		_c='*';	
 	}
+}
+
+void ConwayCell::increase_age(){
+	
+}
+
+bool ConwayCell::need_to_mutate(){
+	
 }
 
 

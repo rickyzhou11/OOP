@@ -19,6 +19,10 @@
 		age;
 	}
 
+	AbstractCell::mutate(){
+		
+	}
+
 	
 	
 

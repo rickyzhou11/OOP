@@ -21,7 +21,9 @@ public:
 	
 	void set_alive();
 
-	void increase_age();	
+	void increase_age();
+
+	bool need_to_mutate();	
 };
 
 #endif

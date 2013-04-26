@@ -32,9 +32,12 @@ public:
 	virtual bool is_alive() =0;
 	
 	virtual void set_alive() =0;
-	
-	//virtual void mutate(); 
 
+	virtual void increase_age() = 0;
+	
+	void mutate(); 
+
+	virtual bool need_to_mutate() =0; 
 };
 
 #endif 

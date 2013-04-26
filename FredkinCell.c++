@@ -20,14 +20,12 @@ FredkinCell::FredkinCell(char c) :
 			_c = c; 
 			age = 0;
 				
-			if(c == '0'){
-				this->_alive = true;
-				_c = '+';
+			if(c == '-'){
+				_alive = false;
+				
 			}
-			else if{ c == '+'}{
-				this->_alive = true;}
 			else{
-				this->_alive = false;
+				_alive = true;
 			}
 }
 
@@ -37,25 +35,22 @@ FredkinCell* FredkinCell::clone() const {
 }
 
 char FredkinCell::get_char(){
-	if(age<10){
-		char ch = age;
-		return ch;
+	if(age<10 && _alive){
+		return '0'+age;
 	}
 	return _c;
 }
 
-bool FredkinCell:: is_alive(){
+bool FredkinCell::is_alive(){
 	return _alive;
 }
 
-void FredkinCell:: set_alive(){
+void FredkinCell::set_alive(){
 	if(_alive){
 		_alive = false;
 		_c='-';
-			
-		
-	
-	}else {
+	}
+	else {
 
 		_alive = true;
 		if(age>9){
@@ -67,8 +62,18 @@ void FredkinCell:: set_alive(){
 void FredkinCell::increase_age(){
 	if(_alive)
 		++age;
-	if(age > 9)
-}		_c = "+";
+	else if(age > 9)
+		_c = '+';
+
+}
+
+bool Fredkin::need_to_mutate(){
+
+		if(age >= 2)
+			return true;
+		else
+			return false; 
+	;
 
 
 

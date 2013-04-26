@@ -154,8 +154,9 @@ template <typename T>
 
 					 }
 					 else{
-
+					 	bool still_alive = board[i][j].is_alive(); 
 					 	if(board[i][j].is_alive()){
+
 					 				if(n_count==0|| n_count==2||n_count==4){
 					 					board[i][j].set_alive();
 					 						--pop;
@@ -163,15 +164,17 @@ template <typename T>
 
 					 		}
 					 		else{
-
-					 			if(n_count<1|| n_count>3){
-					 					board[i][j].set_alive();
-					 						++pop;
+					 			if(!board[i][j].is_alive())
+					 				if(n_count == 1|| n_count==3){
+					 						board[i][j].set_alive();
+					 							++pop;
 					 						}
 
 					 		}
-
-
+					 		if(still_alive && board[i][j].is_alive())
+					 			board[i][j].increase_age();
+					 		if(board[i][j].need_to_mutate)
+					 			board[i][j].mutate();
 				}
 					}
 				}
@@ -191,8 +194,6 @@ template <typename T>
 	
 	void output(){
 
-		//ofstream out;
-		//out.open("RunLife.out");
 		cout << "generation = " << gen << ", Population = " << pop << endl;	
 		
 		for(int i =0; i < _num_row; i++){
@@ -205,7 +206,6 @@ template <typename T>
 			cout << "" << endl;
 		}
 		
-		//out.close();
 
 	}
 

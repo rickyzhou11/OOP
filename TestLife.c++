@@ -16,6 +16,7 @@
 
 #define private public
 #define protected public
+
 #include "Life.h"
 #include "ConwayCell.h"
 #include "FredkinCell.h"
@@ -33,9 +34,9 @@ struct TestLife : CppUnit::TestFixture {
   // Life
   // ----------------
 
-    vector<char> temp(5, '.');
-    vector< vector<char> > temp_board;
-    vector< vector<char> > temp_board1;
+    vector<char> v(5 , '.');
+    vector<vector<char> > temp_board;
+    vector<vector<char> > temp_board1;
     temp_board.push_back(temp);
     temp_board.push_back(temp);
     temp_board.push_back(temp);
@@ -47,7 +48,7 @@ struct TestLife : CppUnit::TestFixture {
 
     void test_life_constructor_1() {
     Life<ConwayCell> l(3, 5, temp_board);
-    CPPUNIT_ASSERT(c.pop == 0);
+    CPPUNIT_ASSERT(l.pop == 0);
 
   }
 
@@ -65,22 +66,22 @@ struct TestLife : CppUnit::TestFixture {
 
   void test_life_play_1(){
     Life<ConwayCell> l(3, 5, temp_board);
-    l.play();
-    l.play();
+    l.play(1);
+    l.play(1);
     CPPUNIT_ASSERT(c.pop == 0);
   }
 
   void test_life_play_2(){
     Life<ConwayCell> l(3, 5, temp_board1);
-    l.play();
-    l.play();
+    l.play(1);
+    l.play(1);
     CPPUNIT_ASSERT(c.pop == 3);
   }
 
 void test_life_play_3() {
     Life<ConwayCell> l(1, 5, temp_board1);
-    l.play();
-    l.play();
+    l.play(1);
+    l.play(1);
     CPPUNIT_ASSERT(c.pop == 0);
 
   }

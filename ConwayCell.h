@@ -20,7 +20,11 @@ public:
 	
 	bool is_alive();
 	
-	void set_alive();	
+	void set_alive();
+
+	void increase_age();
+
+	bool need_to_mutate();	
 };	
 
 #endif

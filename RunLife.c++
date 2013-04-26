@@ -86,17 +86,25 @@ int main () {
 
     Life<ConwayCell> life(x, y, vector );
     	life.output();
-	for(int i = 0; i< 283 ; i++){
-    		life.play(1);
-		if(i<10 && i>0)
-   			life.output();
-	}
-	life.output();
-	life.play(40);
-	life.output();
-	life.play(2177);
-	life.output();
-	
+
+        for(int i = 0; i< 9 ; i++)
+            {
+                life.play(1);
+                life.output();
+            }
+        for(int i = 0; i < 274; i++){
+            life.play(1);
+        }
+        life.output();
+        for(int i = 0; i < 40; i++){
+            life.play(1);
+        }
+        life.output();
+        for(int i = 0; i < 2177; i++){
+            life.play(1);
+        }
+        life.output();
+
 	
         }
     catch (const invalid_argument&) {
