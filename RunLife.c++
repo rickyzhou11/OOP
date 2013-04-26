@@ -30,9 +30,11 @@ To document the program:
 #include <iostream>  // cout, endl
 #include <stdexcept> // invalid_argument, out_of_range
 #include <fstream>
-#include "AbstractCell.h"
-#include "Cell.h"
+#include <vector>
+// #include "AbstractCell.h"
+//#include "Cell.h"
 #include "Life.h"
+
 // ----
 // main
 // ----
@@ -57,13 +59,51 @@ int main () {
         Simulate 2177 moves.
         Print the 2500th grid.
         */
-	
 
-	Life<ConwayCell> life("RunLifeConway.in");
+
+        ifstream r;
+        r.open ("RunLifeConway.in");
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        // cout << y << endl;
+        // cout << x << endl;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+                //cout << c << endl;
+            }
+            
+        }
+        r.close();
+
+       // for (int i = 0; i < x; ++i) {
+            
+       //      for (int j = 0; j < y; ++j) {
+       //          cout << vector[i][j]; 
+       //      }
+       //      cout << "" << endl;
+       //  }
+    
+    
+    
+    
+
+
+    Life<ConwayCell> life(x, y, vector );
     int num_simulations = 100;
-	life.play(num_simulations); 
-    life.output("RunLife.out");
-	
+    life.output();
+	for(int i = 0; i< 10 ; i++){
+    life.play(1); 
+    life.output();
+	}
 	
 	
         }
@@ -76,34 +116,34 @@ int main () {
     // Fredkin Cell 20x20
     // ------------------
 
-    try {
-        cout << "*** Life<FredkinCell> 20x20 ***" << endl;
-        /*
-        read RunLifeFredkin.in // assume all Fredkin cells
-        Simulate 5 moves.
-        Print every grid (i.e. 0, 1, 2...5)
-        */
-        }
-    catch (const invalid_argument&) {
-        assert(false);}
-    catch (const out_of_range&) {
-        assert(false);}
+    // try {
+    //     cout << "*** Life<FredkinCell> 20x20 ***" << endl;
+        
+    //     read RunLifeFredkin.in // assume all Fredkin cells
+    //     Simulate 5 moves.
+    //     Print every grid (i.e. 0, 1, 2...5)
+        
+    //     }
+    // catch (const invalid_argument&) {
+    //     assert(false);}
+    // catch (const out_of_range&) {
+    //     assert(false);}
 
     // ----------
     // Cell 20x20
     // ----------
 
-    try {
-        cout << "*** Life<Cell> 20x20 ***" << endl;
-        /*
-        read RunLifeCell.in // assume all Fredkin cells
-        Simulate 5 moves.
-        Print every grid (i.e. 0, 1, 2...5)
-        */
-        }
-    catch (const invalid_argument&) {
-        assert(false);}
-    catch (const out_of_range&) {
-        assert(false);}
+    // try {
+    //     cout << "*** Life<Cell> 20x20 ***" << endl;
+        
+    //     read RunLifeCell.in // assume all Fredkin cells
+    //     Simulate 5 moves.
+    //     Print every grid (i.e. 0, 1, 2...5)
+        
+    //     }
+    // catch (const invalid_argument&) {
+    //     assert(false);}
+    // catch (const out_of_range&) {
+    //     assert(false);}
 
     return 0;}

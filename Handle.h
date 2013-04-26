@@ -2,7 +2,6 @@
 #define Handle_h
 
 #include "AbstractCell.c++"
-#include "ConwayCell.c++"
 
 #include <algorithm> // swap
 

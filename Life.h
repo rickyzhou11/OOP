@@ -7,7 +7,7 @@
 #include <stdexcept>
 #include <algorithm>
 #include <fstream>
-
+#include "ConwayCell.c++"
 
 using namespace std;
  
@@ -15,9 +15,10 @@ using namespace std;
 template <typename T>
  class Life{
 
-	public:
+	private:
 
-		vector< vector<T*> > board; 
+		vector<T> temp;
+		vector<vector<T> > board; 
 
 		int gen; 
 
@@ -27,43 +28,38 @@ template <typename T>
 
 		int col;	
 	
-		int num_row;
+		const int _num_row;
 
-		int num_col;
+		const int _num_col;
 	
+	public:
 
-	Life(string file){
 
-		ifstream in;
+	Life(int row_num, int col_num, vector<vector<char> > board_copy) :
+			_num_row (row_num),
+			_num_col (col_num)
+	{
 
-		in.open(file);
-
-		int num_row;
-
-		int num_col;
+				
 		char cell;
 
 		pop = 0;
 
 		gen = 0;
 
-		in >> num_row;
+		for(int row = 0; row < _num_row; row++){
 
-		in >> num_col;
-	
-		for(int row = 0; row < num_row; row++){
+			board.push_back(temp);
 
-			board.push_back(vector<T*>());
+			for(int col = 0; col < _num_col; col++){
 
-			for(int col = 0; col < num_col; col++){
-
-				in >> cell;
-				cout << "IN LIFE CONSTRUCTOR: " << cell << endl;  
-				//T* cell_ptr = &;
+				cell = board_copy[row][col] ;
+				
 				board[row].push_back(T(cell));
-			
-				if(board[row][col]->_alive) 
+				
+				if(board[row][col].is_alive()) 
 					pop++;	
+				
 
 			}
 		
@@ -79,73 +75,140 @@ template <typename T>
 	
 	void play(int total_turns){
  		int current_turn = 0;
+
  		vector<vector<char> > board_copy;
-		while(total_turns > current_turn){
-	
-			for(int i =0; i< num_row; i++){
-			
-				for(int j = 0; j< num_col; j++){
-					board_copy = copy_board();
-					board[i][j]->set_num_neighbors(i , j, board_copy, num_row, num_col);
+
+ 		bool was_alive;
+
+ 		int count_neighbors[_num_row][_num_col];
+
+ 		for(int i = 0; i < _num_row; i++)
+ 			for(int j = 0; j < _num_col; j++)
+ 				count_neighbors[i][j] = 0;
+
+
+		 while(total_turns > current_turn){
+            
+            for(int i =0; i< _num_row; i++){
+               
+                for(int j = 0; j< _num_col; j++){
+                    if(board[i][j].is_alive() ){  //beginning of if statement
+
+                        if((i-1)>=0)
+                        	count_neighbors[i-1][j] = count_neighbors[i-1][j] + 1;
+                       
+                        if((j-1)>=0)
+                        	count_neighbors[i][j-1] += 1;
+
+                        if((i+1)<_num_row)   
+                        	count_neighbors[i+1][j] += 1;
+
+                        if((j+1)< _num_col)
+                        	count_neighbors[i][j+1]+= 1;
+               
+                    if(board[i][j].get_char() == '.'|| board[i][j].get_char() == '*'){
+                        if((i-1)>=0 && (i-1)>=0)
+                        	(count_neighbors[i-1][j-1]) += 1;
+
+                        if((i+1)< _num_row && (j+1)< _num_col)
+                        	(count_neighbors[i+1][j+1]) += 1;
+
+                        if((i-1)>=0 && (j+1)< _num_col)
+                        	count_neighbors[i-1][j+1] += 1;
+
+                        if((j-1)>=0 && (i+1)< _num_row)
+                        	(count_neighbors[i+1][j-1]) += 1;
+                    }   
+
+
+
+                    } // end of if statement
+                } //end of second for loop
+
+            }//end of first for loop
+
+       
+
+            //update status
+			for(int i =0; i< _num_row; i++){
+				for(int j = 0; j< _num_col; j++){
+						int n_count=count_neighbors[i][j];
+
+					 if(board[i][j].get_char() == '.'|| board[i][j].get_char() == '*'){
+					 		if(board[i][j].is_alive()){
+					 				if(n_count<2|| n_count>3){
+					 					board[i][j].set_alive();
+					 						--pop;
+					 						}
+					 		}
+					 		else{
+
+					 			if(n_count==3){
+					 					board[i][j].set_alive();
+					 						++pop;
+					 						}
+
+					 		}
+
+
+					 }
+					 else{
+
+					 	if(board[i][j].is_alive()){
+					 				if(n_count==0|| n_count==2||n_count==4){
+					 					board[i][j].set_alive();
+					 						--pop;
+					 						}
+
+					 		}
+					 		else{
+
+					 			if(n_count<1|| n_count>3){
+					 					board[i][j].set_alive();
+					 						++pop;
+					 						}
+
+					 		}
+
+
+				}
 					}
-				} 
-
-			for(int i =0; i< num_row; i++){
-				for(int j = 0; j< num_col; j++){
-					board[i][j]->update_status();
-				} 
-
-			}
+				}
 			++current_turn;
-
-		}
-		
-
+			++gen;
+			
+		} //end of the while loop
 
 	}
+		
+	
 	 
         //-------------------
         // output
         //------------------
 
 	
-	void output(string file){
+	void output(){
 
-		ofstream out;
-		out.open(file);
-		out << "generation = " << gen << ", Population = " << pop << endl;	
+		//ofstream out;
+		//out.open("RunLife.out");
+		cout << "generation = " << gen << ", Population = " << pop << endl;	
 		
-		for(int i =0; i < num_row; i++){
+		for(int i =0; i < _num_row; i++){
 		
-			 for(int j =0; j < num_col; j++)
-				out << board[i][j]->get_char();
-
-	
-			out << "\n";
-		}
+			 for(int j =0; j < _num_col; j++){
+			 	cout << board[i][j].get_char();
 		
-		out.close();
-
-	}
-
-	
-	vector<vector<char> > copy_board(){
-
-		vector< vector<char> > board_copy; 
-
-		for(int i = 0; i < num_row; i++){
-			board_copy.push_back(vector<char>());
-			for(int j= 0; j< num_col; j++){
-				if(board[i][j]->alive())
-					board_copy[i].push_back('a');
-				else
-					board_copy[i].push_back('d');
 			}
-
+	
+			cout << "" << endl;
 		}
-		return board_copy;
+		
+		//out.close();
 
 	}
+
+
 
 };
 

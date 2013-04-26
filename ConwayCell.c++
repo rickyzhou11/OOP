@@ -1,100 +1,54 @@
+#include "ConwayCell.h"
 
 
+ConwayCell::ConwayCell() :
+	AbstractCell()
+{
+	    	_num_neighbors = 0;
+		_c = '.';
+		_alive = true;
+		age = 0;
 
-#include <iostream>
-#include "ConwayCell.h" 
-#include <vector>
+}
 
+ConwayCell::ConwayCell(char c) :
+	
+	AbstractCell()
+{
 
-	ConwayCell::ConwayCell(char c) : 
-			AbstractCell() 
-			{ 
-				if(c == '*')
-					_alive = true;
-				else
-					_alive = false;
+			_num_neighbors = 0;
+			_c = c; 
+			age = 0;
+				
+			if(c == '*'){
+				this->_alive = true;
 			}
-			
-	ConwayCell* ConwayCell::clone () {
+			else{
+				this->_alive = false;
+			}
+}
+
+ConwayCell* ConwayCell::clone() const {
 
 		return new ConwayCell(*this);
+}
+
+char ConwayCell::get_char(){
+	return _c;
+}
+
+bool ConwayCell:: is_alive(){
+	return _alive;
+}
+
+void ConwayCell:: set_alive(){
+	if(_alive){
+		_alive = false;
+		_c='.';
+	}else {
+		_alive = true;
+		_c='*';	
 	}
-
-	void ConwayCell::set_num_neighbors(int row, int col, vector< vector<char> > board_copy, int board_row, int board_col){ 
-
-		char c;
-		//check the life status of the cell above it
-		if ( (row-1)>= 0){
-			c = board_copy[row-1][col];
-			if(c == 'a')
-				++_num_neighbors; 
-		}
-		//check the life status of the cell to the left of current cell
-		if( (col-1)>= 0){
-			c = board_copy[row][col-1];
-			if(c == 'a')
-				++_num_neighbors;
-		}
-		//check upper left diagonal
-		if( (row-1)>=0 && (col-1)>=0){
-			c = board_copy[row-1][col-1]; 
-			if(c == 'a')
-				++_num_neighbors;
-		}
-
-		//check below current cell
-		if( (row+1)< board_row){
-			c = board_copy[row+1][col]; 
-			if(c == 'a')
-				++_num_neighbors;		
-		}
-
-		//check cell to the right of current cell
-		if( (col+1) < board_col){
-			c = board_copy[row][col+1];
-			if(c == 'a')
-				++_num_neighbors;
-		}
-		//check cell bottom left diagonal
-		if( (row+1) < board_row && (col-1)>=0){
-			c = board_copy[row+1][col-1];
-			if(c == 'a')
-				++_num_neighbors; 
-		}
-
-		//check upper right diagonal
-		if( (row-1)>=0 && (col+1)<board_col ){
-			c = board_copy[row-1][col+1];
-			if(c == 'a')
-				++_num_neighbors;
-
-		}
-		//check bottom right diagonal
-		if( (row+1)<board_row && (col+1)<board_col ){
-			c = board_copy[row+1][col+1];
-			if(c == 'a')
-				++_num_neighbors;
-		}	
-
-	}
-
-	void ConwayCell::update_status(){
-		
-		if( !_alive && (_num_neighbors==3) ){
-			_alive = true;
-			_c = '*';
-			_num_neighbors = 0;
-		}
-		if(_alive){
-			if(_num_neighbors < 2 || _num_neighbors > 3 ){
-				_alive= false;
-				_c = '.'; 
-				_num_neighbors = 0;
-			}
-		}
-	}
+}
 
 
-		
-
-	
