@@ -5,7 +5,7 @@ FredkinCell::FredkinCell() :
 	AbstractCell()
 {
 	    _num_neighbors = 0;
-		_c = '.';
+		_c = '-';
 		_alive = true;
 		age = 0;
 
@@ -20,9 +20,12 @@ FredkinCell::FredkinCell(char c) :
 			_c = c; 
 			age = 0;
 				
-			if(c == '+'){
+			if(c == '0'){
 				this->_alive = true;
+				_c = '+';
 			}
+			else if{ c == '+'}{
+				this->_alive = true;}
 			else{
 				this->_alive = false;
 			}
