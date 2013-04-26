@@ -34,16 +34,17 @@ struct TestLife : CppUnit::TestFixture {
   // Life
   // ----------------
 
-    vector<char> v(5 , '.');
+    
     vector<vector<char> > temp_board;
     vector<vector<char> > temp_board1;
-    temp_board.push_back(temp);
-    temp_board.push_back(temp);
-    temp_board.push_back(temp);
+    vector<char> v(5 , '.');
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    temp_board.push_back(v);
     temp[2] = '*';
-    temp_board1.push_back(temp); 
-    temp_board1.push_back(temp);
-    temp_board1.push_back(temp);
+    temp_board1.push_back(v); 
+    temp_board1.push_back(v);
+    temp_board1.push_back(v);
     
 
     void test_life_constructor_1() {
@@ -54,13 +55,13 @@ struct TestLife : CppUnit::TestFixture {
 
   void test_life_constructor_2() {
     Life<ConwayCell> l(3, 5, temp_board1);
-    CPPUNIT_ASSERT(c.pop == 3);
+    CPPUNIT_ASSERT(l.pop == 3);
 
   }
 
   void test_life_constructor_3() {
     Life<ConwayCell> l(1, 5, temp_board1);
-    CPPUNIT_ASSERT(c.pop == 1);
+    CPPUNIT_ASSERT(l.pop == 1);
 
   }
 
@@ -68,21 +69,21 @@ struct TestLife : CppUnit::TestFixture {
     Life<ConwayCell> l(3, 5, temp_board);
     l.play(1);
     l.play(1);
-    CPPUNIT_ASSERT(c.pop == 0);
+    CPPUNIT_ASSERT(l.pop == 0);
   }
 
   void test_life_play_2(){
     Life<ConwayCell> l(3, 5, temp_board1);
     l.play(1);
     l.play(1);
-    CPPUNIT_ASSERT(c.pop == 3);
+    CPPUNIT_ASSERT(l.pop == 3);
   }
 
 void test_life_play_3() {
     Life<ConwayCell> l(1, 5, temp_board1);
     l.play(1);
     l.play(1);
-    CPPUNIT_ASSERT(c.pop == 0);
+    CPPUNIT_ASSERT(l.pop == 0);
 
   }
   // ----------------

@@ -92,37 +92,81 @@ template <typename T>
             for(int i =0; i< _num_row; i++){
                
                 for(int j = 0; j< _num_col; j++){
-                    if(board[i][j].is_alive() ){  //beginning of if statement
+                    // if(board[i][j].is_alive() ){  //beginning of if statement
 
-                        if((i-1)>=0)
-                        	count_neighbors[i-1][j] = count_neighbors[i-1][j] + 1;
+                    //     if((i-1)>=0)
+                    //     	count_neighbors[i-1][j] = count_neighbors[i][j] + 1;
                        
-                        if((j-1)>=0)
-                        	count_neighbors[i][j-1] += 1;
+                    //     if((j-1)>=0)
+                    //     	count_neighbors[i][j-1] += 1;
 
-                        if((i+1)<_num_row)   
-                        	count_neighbors[i+1][j] += 1;
+                    //     if((i+1)<_num_row)   
+                    //     	count_neighbors[i+1][j] += 1;
 
-                        if((j+1)< _num_col)
-                        	count_neighbors[i][j+1]+= 1;
+                    //     if((j+1)< _num_col)
+                    //     	count_neighbors[i][j+1]+= 1;
                
-                    if(board[i][j].get_char() == '.'|| board[i][j].get_char() == '*'){
-                        if((i-1)>=0 && (i-1)>=0)
-                        	count_neighbors[i-1][j-1] += 1;
+                    // if(board[i][j].get_char() == '.'|| board[i][j].get_char() == '*'){
+                    //     if((i-1)>=0 && (j-1)>=0)
+                    //     	if(board[i-1][j-1].get_char() == '.'|| board[i-1][j-1].get_char() == '*')
+                    //     		count_neighbors[i-1][j-1] += 1;
 
-                        if((i+1)< _num_row && (j+1)< _num_col)
-                        	count_neighbors[i+1][j+1] += 1;
+                    //     if((i+1) < _num_row && (j+1)< _num_col)
+                    //     	if(board[i+1][j+1].get_char() == '.'|| board[i+1][j+1].get_char() == '*')
+                    //     		count_neighbors[i+1][j+1] += 1;
 
-                        if((i-1)>=0 && (j+1)< _num_col)
-                        	count_neighbors[i-1][j+1] += 1;
+                    //     if((i-1)>=0 && (j+1)< _num_col)
+                    //     	if(board[i-1][j+1].get_char() == '.'|| board[i-1][j+1].get_char() == '*')
+                    //     		count_neighbors[i-1][j+1] += 1;
 
-                        if((j-1)>=0 && (i+1)< _num_row)
-                        	count_neighbors[i+1][j-1] += 1;
-                    }   
+                    //     if((j-1)>=0 && (i+1)< _num_row)
+                    //     	if(board[i+1][j-1].get_char() == '.'|| board[i+1][j-1].get_char() == '*')
+                    //     		count_neighbors[i+1][j-1] += 1;
+                    // }   
 
 
 
-                    } // end of if statement
+                    // } // end of if statement
+
+                	if((i-1)>=0)
+                		if(board[i-1][j].is_alive())
+                			count_neighbors[i][j] = count_neighbors[i][j] + 1;
+
+                	if((j-1)>=0)
+                		if(board[i][j-1].is_alive())
+                			count_neighbors[i][j] = count_neighbors[i][j] + 1;
+
+                	if((i+1)<_num_row)
+                		if(board[i+1][j].is_alive())
+                			count_neighbors[i][j] = count_neighbors[i][j] + 1;
+
+                	if((j+1)< _num_col)
+                		if(board[i][j+1].is_alive())
+                			count_neighbors[i][j] = count_neighbors[i][j] + 1;
+
+
+                	if(board[i][j].get_char() == '.'|| board[i][j].get_char() == '*'){
+
+                		if((i-1)>=0 && (j-1)>=0)
+                			if(board[i-1][j-1].is_alive())
+                				count_neighbors[i][j] = count_neighbors[i][j] + 1;
+
+                		if((i+1) < _num_row && (j+1)< _num_col)
+                			if(board[i+1][j+1].is_alive())
+                				count_neighbors[i][j] = count_neighbors[i][j] + 1;
+
+                		if((i-1)>=0 && (j+1)< _num_col)
+                			if(board[i-1][j+1].is_alive())
+                				count_neighbors[i][j] = count_neighbors[i][j] + 1;
+
+                		if((i+1)<_num_row && (j-1)>=0)
+                			if(board[i+1][j-1].is_alive())
+                				count_neighbors[i][j] = count_neighbors[i][j] + 1;
+
+
+                	}
+
+
                 } //end of second for loop
 
             }//end of first for loop
@@ -193,7 +237,7 @@ template <typename T>
 	
 	void output(){
 
-		cout << "generation = " << gen << ", Population = " << pop << endl;	
+		cout << "Generation = " << gen << ", Population = " << pop << endl;	
 		
 		for(int i =0; i < _num_row; i++){
 		
