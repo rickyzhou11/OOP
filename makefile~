@@ -13,8 +13,8 @@ doc:
 log:
 	git log > Life.log
 
-RunLife: AbstractCell.c++ AbstractCell.h Cell.h ConwayCell.c++ ConwayCell.h FredkinCell.c++ FredkinCell.h Handle.h Life.h RunLife.c++
-	g++ -w -pedantic -std=c++0x -Wall AbstractCell.c++ ConwayCell.c++ FredkinCell.c++ RunLife.c++ -o  RunLife
+RunLife: AbstractCell.c++ AbstractCell.h Cell.h ConwayCell.c++ ConwayCell.h Handle.h Life.h RunLife.c++
+	g++ -pedantic -std=c++0x -Wall AbstractCell.h ConwayCell.c++ RunLife.c++ -o RunLife
 
 run: RunLife
 	RunLife
@@ -57,4 +57,3 @@ clean:
 	rm -f RunLife
 	rm -f TestLife
 	rm -f *.tmp
-

@@ -7,7 +7,8 @@
 #include <stdexcept>
 #include <algorithm>
 #include <fstream>
-#include "ConwayCell.c++"
+
+#include "Cell.h"	
 
 using namespace std;
  
@@ -108,16 +109,16 @@ template <typename T>
                
                     if(board[i][j].get_char() == '.'|| board[i][j].get_char() == '*'){
                         if((i-1)>=0 && (i-1)>=0)
-                        	(count_neighbors[i-1][j-1]) += 1;
+                        	count_neighbors[i-1][j-1] += 1;
 
                         if((i+1)< _num_row && (j+1)< _num_col)
-                        	(count_neighbors[i+1][j+1]) += 1;
+                        	count_neighbors[i+1][j+1] += 1;
 
                         if((i-1)>=0 && (j+1)< _num_col)
                         	count_neighbors[i-1][j+1] += 1;
 
                         if((j-1)>=0 && (i+1)< _num_row)
-                        	(count_neighbors[i+1][j-1]) += 1;
+                        	count_neighbors[i+1][j-1] += 1;
                     }   
 
 

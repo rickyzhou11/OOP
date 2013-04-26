@@ -2,8 +2,7 @@
 #define ConwayCell_h
 #include <vector>
 #include <iostream>
-#include "AbstractCell.c++"
-
+#include "AbstractCell.h"
 using namespace std;
 
 class ConwayCell : public AbstractCell {

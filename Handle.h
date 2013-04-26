@@ -1,7 +1,7 @@
 #ifndef Handle_h
 #define Handle_h
 
-#include "AbstractCell.c++"
+#include "AbstractCell.h"
 
 #include <algorithm> // swap
 

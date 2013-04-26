@@ -1,8 +1,8 @@
 #ifndef FredkinCell_h
 #define FredkinCell_h
 #include <vector>
-#include <iostream> 
-#include "AbstractCell.h"
+#include<iostream> 
+//#include "AbstractCell.c++"
 
 class FredkinCell : public AbstractCell {
 	

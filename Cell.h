@@ -9,29 +9,30 @@
 
 
 #include "Handle.h"
-#include "AbstractCell.c++"
+#include "AbstractCell.h"
+#include "ConwayCell.h"
+#include "FredkinCell.h"
+
 using namespace std;
 
 struct Cell : Handle<AbstractCell> {
+
+
 	Cell (AbstractCell* p) :
 		Handle<AbstractCell> (p)
 	{}
 
 
-void void set_num_neighbors(const int row, const int col , vector< vector<char> > board_copy , const int board_row , const int board_col ){
-	
-	return get()->set_num_neighbors(row, col, board_copy, board_row, board_col);
 
+Cell(char c)
+{
+	if( c == '*' || c == '.')
+		AbstractCell cell = new ConwayCell(c);
+	else
+		AbstractCell cell = new FredkinCell(c);
 }
 
-// Cell(char c){
-// 	if( c == '*' || c == '.')
-// 		AbstractCell cell = new ConwayCell(c);
-// 	else
-// 		AbstractCell cell = new FredkinCell(c);
-// }
-
-void get_char(){
+char get_char(){
 	
 	return get()->get_char();
 
@@ -41,13 +42,13 @@ bool is_alive(){
 	return get()->is_alive();
 }
 
-char set_alive(){
-	return get()->set_alive();
+void set_alive(){
+	get()->set_alive();
 }
 
-mutate(){
-	return get()-> mutate();
-}
+// void mutate(){
+// 	return get()-> mutate();
+// }
 
 
 

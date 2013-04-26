@@ -1,20 +1,27 @@
 #ifndef ConwayCell_h
 #define ConwayCell_h
+#include <vector>
+#include <iostream>
+//#include "AbstractCell.c++"
 
-#include<iostream> 
-#include "AbstractCell.h"
+using namespace std;
 
-class ConwayCell  : public AbstractCell {
+class ConwayCell : public AbstractCell {
 	
-	public:
-		ConwayCell (char c);
+public:
+	
 
-	void update_status() ;
+	ConwayCell ();
 
-	void set_num_neighbors(int row, int col);
+	ConwayCell (char c);
 
-		
-};
+	ConwayCell* clone() const;
+
+	char get_char();
+	
+	bool is_alive();
+	
+	void set_alive();	
+};	
 
 #endif
-	

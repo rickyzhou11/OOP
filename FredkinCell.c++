@@ -4,7 +4,7 @@
 FredkinCell::FredkinCell() :
 	AbstractCell()
 {
-	    	_num_neighbors = 0;
+	    _num_neighbors = 0;
 		_c = '.';
 		_alive = true;
 		age = 0;
@@ -20,7 +20,7 @@ FredkinCell::FredkinCell(char c) :
 			_c = c; 
 			age = 0;
 				
-			if(c == '*'){
+			if(c == '+'){
 				this->_alive = true;
 			}
 			else{
@@ -34,6 +34,10 @@ FredkinCell* FredkinCell::clone() const {
 }
 
 char FredkinCell::get_char(){
+	if(age<10){
+		char ch = age;
+		return ch;
+	}
 	return _c;
 }
 
@@ -44,17 +48,22 @@ bool FredkinCell:: is_alive(){
 void FredkinCell:: set_alive(){
 	if(_alive){
 		_alive = false;
-
-		if(_age>9){
+		_c='-';
+			
 		
-		_c='+';
-			}
-		
-	}
+	
 	}else {
+
 		_alive = true;
-		_c='-';	
+		if(age>9){
+			
+		_c='+';	}
 	}
+}
+
+void FredkinCell::increase_age(){
+	if(_alive)
+		++age;
 }
 
 

@@ -6,7 +6,7 @@ ConwayCell::ConwayCell() :
 {
 	    	_num_neighbors = 0;
 		_c = '.';
-		_alive = true;
+		_alive = false;
 		age = 0;
 
 }

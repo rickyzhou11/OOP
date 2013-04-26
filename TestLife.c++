@@ -1,77 +1,242 @@
-/*
-To test the program:
-    % ls /usr/include/cppunit/
-    ...
-    TestFixture.h
-    ...
-    % locate libcppunit.a
-    /usr/lib/libcppunit.a
-    % g++ -lcppunit -ldl -pedantic -std=c++0x -Wall Darwin.c++ TestDarwin.c++ -o TestDarwin.c++.app
-    % valgrind TestDarwin.c++.app >& TestDarwin.c++.out
-*/
-
 // --------
 // includes
 // --------
 
-#include <iostream> // cout, endl
-#include <sstream>  // istringtstream, ostringstream
-#include <string>   // ==
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <cstring>
+#include <ostream>
+#include <vector>
 
-#include "cppunit/extensions/HelperMacros.h" // CPPUNIT_TEST, CPPUNIT_TEST_SUITE, CPPUNIT_TEST_SUITE_END
-#include "cppunit/TestFixture.h"             // TestFixture
-#include "cppunit/TextTestRunner.h"          // TextTestRunner
+#include "cppunit/extensions/HelperMacros.h"
+#include "cppunit/TestFixture.h"
+#include "cppunit/TextTestRunner.h"
+
 
 #define private public
 #define protected public
-#define class struct
 #include "Life.h"
-#include "Cell.h"
 #include "ConwayCell.h"
 #include "FredkinCell.h"
-#include "Handle.h"
-// -----------
-// TestDarwin
-// -----------
+#include "Cell.h"
 
-struct TestDarwin : CppUnit::TestFixture {
-        
-        //dw.simulate();
+using namespace std;
+
+// ----------
+// TestDarwin
+// ----------
+
+struct TestLife : CppUnit::TestFixture {
+ 
+   // ----------------
+  // Life
+  // ----------------
+
+    vector<char> temp(5, '.');
+    vector< vector<char> > temp_board;
+    vector< vector<char> > temp_board1;
+    temp_board.push_back(temp);
+    temp_board.push_back(temp);
+    temp_board.push_back(temp);
+    temp[2] = '*';
+    temp_board1.push_back(temp); 
+    temp_board1.push_back(temp);
+    temp_board1.push_back(temp);
     
 
-    // void test_Creature1() {
-    //    }
+    void test_life_constructor_1() {
+    Life<ConwayCell> l(3, 5, temp_board);
+    CPPUNIT_ASSERT(c.pop == 0);
+
+  }
+
+  void test_life_constructor_2() {
+    Life<ConwayCell> l(3, 5, temp_board1);
+    CPPUNIT_ASSERT(c.pop == 3);
+
+  }
+
+  void test_life_constructor_3() {
+    Life<ConwayCell> l(1, 5, temp_board1);
+    CPPUNIT_ASSERT(c.pop == 1);
+
+  }
+
+  void test_life_play_1(){
+    Life<ConwayCell> l(3, 5, temp_board);
+    l.play();
+    l.play();
+    CPPUNIT_ASSERT(c.pop == 0);
+  }
+
+  void test_life_play_2(){
+    Life<ConwayCell> l(3, 5, temp_board1);
+    l.play();
+    l.play();
+    CPPUNIT_ASSERT(c.pop == 3);
+  }
+
+void test_life_play_3() {
+    Life<ConwayCell> l(1, 5, temp_board1);
+    l.play();
+    l.play();
+    CPPUNIT_ASSERT(c.pop == 0);
+
+  }
+  // ----------------
+  // ConwayCell
+  // ----------------
+
+void test_conway_get_char1(){
+    ConwayCell c('.');
+    CPPUNIT_ASSERT(c.get_char() == '.');
+
+}
+
+void test_conway_get_char2(){
+    ConwayCell c('*');
+    CPPUNIT_ASSERT(c.get_char() == '*');
+
+}
+
+void test_conway_get_char3(){
+    ConwayCell c();
+    CPPUNIT_ASSERT(c.get_char() == '.');
+
+}
+
+void test_conway_is_alive1(){
+    ConwayCell c('*');
+    CPPUNIT_ASSERT(c.is_alive() == true);
+
+}
+
+void test_conway_is_alive2(){
+    ConwayCell c('.');
+    CPPUNIT_ASSERT(c.is_alive() == false);
+
+}
+
+void test_conway_is_alive3(){
+    ConwayCell c();
+    CPPUNIT_ASSERT(c.is_alive() == false);
+
+}
+
+void test_conway_set_alive1(){
+    ConwayCell c('*');
+    c.set_alive();
+    CPPUNIT_ASSERT(c.is_alive() == false);
+
+}
+
+void test_conway_set_alive2(){
+    ConwayCell c('.');
+    c.set_alive();
+    CPPUNIT_ASSERT(c.is_alive() == true);
+
+}
+
+void test_conway_set_alive3(){
+    ConwayCell c();
+    c.set_alive();
+    c.set_alive();
+    CPPUNIT_ASSERT(c.is_alive() == false);
+
+}
+  // ----------------
+  // FredkinCell
+  // ----------------
+  void test_fredkin_cell_increase_age_1() {
+    FredkinCell c ;
+    CPPUNIT_ASSERT(c.age == 0);
+  }
+
+  void test_fredkin_cell_increase_age_2() {
+    FredkinCell c("-");
+    c.increase_age();
+    c.increase_age();
+    c.increase_age();
+    c.increase_age();
+    c.increase_age();
+    CPPUNIT_ASSERT(c.age() == 0);
+  }
+
+  void test_fredkin_cell_increase_age_3() {
+    FredkinCell c("+");
+    c.increase_age();
+    CPPUNIT_ASSERT(c.age() == 1);
+  }
 
 
-    //*************//
-    // Board Tests //
-    //*************//
-    void test_Board() {
 
-	Life<ConwayCell> board(20, 20);
-	CPPUNIT_ASSERT(true);
-	
+  
+  // ----------------
+  // Cell isAlive
+  // ----------------
+  void test_cell_is_alive_1() {
+    Cell c = new ConwayCell('.');
+    CPPUNIT_ASSERT(c.is_alive() == false);
+  }
 
-    }
+  void test_cell_is_alive_2() {
+    Cell c = new FredkinCell('-');
+    CPPUNIT_ASSERT(c.is_alive() == false);
+  }
 
-    /* Board is_enemy tests*/
-    void test_Board_is_enemy1()
-    {
-       
-    }
-    };
-// ----
-// main
-// ----
+  void test_cell_is_alive_3() {
+    Cell c = new ConwayCell('*');
+    CPPUNIT_ASSERT(c.is_alive() == true);
+  }
 
-int main () {
-    using namespace std;
-    ios_base::sync_with_stdio(false);  // turn off synchronization with C I/O
-    cout << "TestLife.c++" << endl;
+  // ---------
+  // TestSuite
+  // ---------
+  CPPUNIT_TEST_SUITE(TestLife);
 
-    CppUnit::TextTestRunner tr;
-    tr.addTest(TestLife::suite());
-    tr.run();
+  CPPUNIT_TEST(void test_life_constructor_1);
+  CPPUNIT_TEST(void test_life_constructor_2);
+  CPPUNIT_TEST(void test_life_constructor_3);
 
-    cout << "Done." << endl;
-    return 0;}
+  CPPUNIT_TEST(test_conway_get_char1);
+  CPPUNIT_TEST(test_conway_get_char2);
+  CPPUNIT_TEST(test_conway_get_char3);
+
+  CPPUNIT_TEST(test_conway_is_alive1);
+  CPPUNIT_TEST(test_conway_is_alive2);
+  CPPUNIT_TEST(test_conway_is_alive3);
+
+  CPPUNIT_TEST(test_conway_set_alive1);
+  CPPUNIT_TEST(test_conway_set_alive2);
+  CPPUNIT_TEST(test_conway_set_alive3);
+  
+  CPPUNIT_TEST(test_life_play_1);
+  CPPUNIT_TEST(test_life_play_2);
+  CPPUNIT_TEST(test_life_play_3);
+
+  CPPUNIT_TEST(test_fredkin_cell_increase_age_1);
+  CPPUNIT_TEST(test_fredkin_cell_increase_age_2);
+  CPPUNIT_TEST(test_fredkin_cell_increase_age_3);
+
+  CPPUNIT_TEST(test_cell_is_alive_1);
+  CPPUNIT_TEST(test_cell_is_alive_2);
+  CPPUNIT_TEST(test_cell_is_alive_3);
+
+
+
+  CPPUNIT_TEST_SUITE_END();
+};
+
+int main() {
+  using namespace std;
+  ios_base::sync_with_stdio(false);
+  cout << "TestLife.c++" << endl;
+
+  CppUnit::TextTestRunner tr;
+  tr.addTest(TestLife::suite());
+  tr.run();
+
+  cout << "Done." << endl;
+  return 0;
+}
