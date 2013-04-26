@@ -48,6 +48,9 @@ int main () {
     // Conway Cell 109x69
     // ------------------
 
+    ifstream r;
+        r.open ("RunLifeConway.in");
+
     try {
         cout << "*** Life<ConwayCell> 109x69 ***" << endl;
         /*
@@ -62,8 +65,7 @@ int main () {
         */
 
 
-        ifstream r;
-        r.open ("RunLifeConway.in");
+        
         int x;
         int y;
         char c;
@@ -80,7 +82,7 @@ int main () {
             }
             
         }
-        r.close();
+        
 
 
 
@@ -112,19 +114,13 @@ int main () {
     catch (const out_of_range&) {
         assert(false);}
 
-    // ------------------
-    // Fredkin Cell 20x20
-    // ------------------
 
     try {
-        cout << "*** Life<FredkinCell> 20x20 ***" << endl;
-        
-        // read RunLifeFredkin.in // assume all Fredkin cells
-        // Simulate 5 moves.
-        // Print every grid (i.e. 0, 1, 2...5)
+        cout << "*** Life<ConwayCell> Test2***" << endl;
+       
 
-        ifstream r;
-        r.open ("RunLifeFredkin.in");
+
+       
         int x;
         int y;
         char c;
@@ -141,7 +137,269 @@ int main () {
             }
             
         }
+        
+
+
+
+    Life<ConwayCell> life(x, y, vector );
+        life.output();
+
+        for(int i = 0; i< 9 ; i++)
+            {
+                life.play(1);
+                life.output();
+            
+
+    
+        }
+
+    }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+
+
+        try {
+        cout << "*** Life<ConwayCell> Test3***" << endl;
+       
+
+
+       
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+        
+
+
+
+    Life<ConwayCell> life(x, y, vector );
+        life.output();
+
+        for(int i = 0; i< 9 ; i++)
+            {
+                life.play(1);
+                life.output();
+            
+
+    
+        }
+
+    }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+
+        try {
+        cout << "*** Life<ConwayCell> Test4***" << endl;
+ 
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+        
+
+
+
+    Life<ConwayCell> life(x, y, vector );
+        life.output();
+
+        for(int i = 0; i< 9 ; i++)
+            {
+                life.play(1);
+                life.output();
+            
+
+    
+        }
+
+    }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+
+        try {
+        cout << "*** Life<ConwayCell> Test5***" << endl;
+    
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+        
+
+
+
+    Life<ConwayCell> life(x, y, vector );
+        life.output();
+
+        for(int i = 0; i< 9 ; i++)
+            {
+                life.play(1);
+                life.output();
+            
+
+    
+        }
+
+    }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+
         r.close();
+
+    // ------------------
+    // Fredkin Cell 20x20
+    // ------------------
+
+        r.open ("RunLifeFredkin.in");
+    try {
+        cout << "*** Life<FredkinCell> 20x20 ***" << endl;
+        
+        // read RunLifeFredkin.in // assume all Fredkin cells
+        // Simulate 5 moves.
+        // Print every grid (i.e. 0, 1, 2...5)
+
+        
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+       
+
+
+
+    Life<FredkinCell> life(x, y, vector );
+        life.output();
+        for(int i = 0; i< 5 ; i++){
+            life.play(1);
+            life.output();
+    }
+    
+        
+        }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+try {
+        cout << "*** Life<FredkinCell> test2 ***" << endl;
+        
+        // read RunLifeFredkin.in // assume all Fredkin cells
+        // Simulate 5 moves.
+        // Print every grid (i.e. 0, 1, 2...5)
+
+        
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+       
+
+
+
+    Life<FredkinCell> life(x, y, vector );
+        life.output();
+        for(int i = 0; i< 5 ; i++){
+            life.play(1);
+            life.output();
+    }
+    
+        
+        }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+        try {
+        cout << "*** Life<FredkinCell> test3 ***" << endl;
+        
+        // read RunLifeFredkin.in // assume all Fredkin cells
+        // Simulate 5 moves.
+        // Print every grid (i.e. 0, 1, 2...5)
+
+        
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+       
 
 
 
@@ -159,19 +417,14 @@ int main () {
     catch (const out_of_range&) {
         assert(false);}
 
-    // ----------
-    // Cell 20x20
-    // ----------
-
-    try {
-        cout << "*** Life<Cell> 20x20 ***" << endl;
+        try {
+        cout << "*** Life<FredkinCell> test4 ***" << endl;
         
-        // read RunLifeCell.in // assume all Fredkin cells
+        // read RunLifeFredkin.in // assume all Fredkin cells
         // Simulate 5 moves.
         // Print every grid (i.e. 0, 1, 2...5)
 
-        ifstream r;
-        r.open ("RunLifeCell.in");
+        
         int x;
         int y;
         char c;
@@ -188,7 +441,92 @@ int main () {
             }
             
         }
-        r.close();
+       
+
+
+
+    Life<FredkinCell> life(x, y, vector );
+        life.output();
+        for(int i = 0; i< 5 ; i++){
+            life.play(1);
+            life.output();
+    }
+    
+        
+        }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+        try {
+        cout << "*** Life<FredkinCell> test5 ***" << endl;
+        
+        
+        
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+       
+
+
+
+    Life<FredkinCell> life(x, y, vector );
+        life.output();
+        for(int i = 0; i< 5 ; i++){
+            life.play(1);
+            life.output();
+    }
+    
+        
+        }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+
+ r.close();
+    // ----------
+    // Cell 20x20
+    // ----------
+r.open ("RunLifeCell.in");
+    try {
+        cout << "*** Life<Cell> 20x20 ***" << endl;
+        
+        // read RunLifeCell.in // assume all Fredkin cells
+        // Simulate 5 moves.
+        // Print every grid (i.e. 0, 1, 2...5)
+
+        
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+        
 
 
 
@@ -205,5 +543,168 @@ int main () {
         assert(false);}
     catch (const out_of_range&) {
         assert(false);}
+
+    try {
+        cout << "*** Life<Cell> test2 ***" << endl;
+        
+      
+
+        
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+        
+
+
+
+    Life<Cell> life(x, y, vector );
+        life.output();
+        for(int i = 0; i< 5 ; i++){
+            life.play(1);
+            life.output();
+    }
+    
+        
+        }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+
+        try {
+        cout << "*** Life<Cell> test3 ***" << endl;
+        
+      
+
+        
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+        
+
+
+
+    Life<Cell> life(x, y, vector );
+        life.output();
+        for(int i = 0; i< 5 ; i++){
+            life.play(1);
+            life.output();
+    }
+    
+        
+        }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+
+        try {
+        cout << "*** Life<Cell> test4 ***" << endl;
+        
+      
+
+        
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+        
+
+
+
+    Life<Cell> life(x, y, vector );
+        life.output();
+        for(int i = 0; i< 5 ; i++){
+            life.play(1);
+            life.output();
+    }
+    
+        
+        }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+
+        try {
+        cout << "*** Life<Cell> test5 ***" << endl;
+        
+      
+
+        
+        int x;
+        int y;
+        char c;
+        vector<char> char_vector;
+
+        vector<vector<char> > vector;
+                r >> x >> y;
+        
+        for (int i = 0; i < x; ++i) {
+            vector.push_back(char_vector);
+            for (int j = 0; j < y; ++j) {
+                r >> c;
+                vector[i].push_back(c);
+            }
+            
+        }
+        
+
+
+
+    Life<Cell> life(x, y, vector );
+        life.output();
+        for(int i = 0; i< 5 ; i++){
+            life.play(1);
+            life.output();
+    }
+    
+        
+        }
+    catch (const invalid_argument&) {
+        assert(false);}
+    catch (const out_of_range&) {
+        assert(false);}
+
+
+        r.close();
 
     return 0;}
