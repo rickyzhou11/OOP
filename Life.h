@@ -77,7 +77,6 @@ template <typename T>
 	void play(int total_turns){
  		int current_turn = 0;
 
- 		vector<vector<char> > board_copy;
 
  		bool was_alive;
 
@@ -173,7 +172,7 @@ template <typename T>
 					 		}
 					 		if(still_alive && board[i][j].is_alive())
 					 			board[i][j].increase_age();
-					 		if(board[i][j].need_to_mutate)
+					 		if(board[i][j].need_to_mutate())
 					 			board[i][j].mutate();
 				}
 					}

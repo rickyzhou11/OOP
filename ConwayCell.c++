@@ -12,7 +12,6 @@ ConwayCell::ConwayCell() :
 }
 
 ConwayCell::ConwayCell(char c) :
-	
 	AbstractCell()
 {
 
@@ -21,10 +20,10 @@ ConwayCell::ConwayCell(char c) :
 			age = 0;
 				
 			if(c == '*'){
-				this->_alive = true;
+				_alive = true;
 			}
 			else{
-				this->_alive = false;
+				_alive = false;
 			}
 }
 
@@ -56,7 +55,7 @@ void ConwayCell::increase_age(){
 }
 
 bool ConwayCell::need_to_mutate(){
-	
+
 }
 
 

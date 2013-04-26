@@ -37,7 +37,9 @@ public:
 	
 	void mutate(); 
 
-	virtual bool need_to_mutate() =0; 
+	virtual bool need_to_mutate() =0;
+
+	virtual AbstractCell* clone() const = 0;
 };
 
 #endif 

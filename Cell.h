@@ -18,8 +18,8 @@ using namespace std;
 struct Cell : Handle<AbstractCell> {
 
 
-	Cell (AbstractCell* p) :
-		Handle<AbstractCell> (p)
+	Cell (char c) :
+		Handle<AbstractCell> (new FredkinCell(c))
 	{
 
 	}
@@ -41,7 +41,7 @@ void set_alive(){
 
 void mutate(){
 
-	Handle<AbstractCell new_cell(new ConwayCell('*'));
+	Handle<AbstractCell> new_cell(new ConwayCell('*'));
 	swap(new_cell);
 
 }
@@ -51,8 +51,13 @@ bool need_to_mutate(){
 	return get()->need_to_mutate();
 }
 
+
+
+void increase_age(){
+
+	return get()-> increase_age();
+}
+
+
 };
-
-
-
 #endif

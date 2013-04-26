@@ -19,8 +19,8 @@
 		age;
 	}
 
-	AbstractCell::mutate(){
-		
+	void AbstractCell::mutate(){
+
 	}
 
 	

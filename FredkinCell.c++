@@ -67,13 +67,13 @@ void FredkinCell::increase_age(){
 
 }
 
-bool Fredkin::need_to_mutate(){
+bool FredkinCell::need_to_mutate(){
 
 		if(age >= 2)
 			return true;
 		else
 			return false; 
-	;
+	}
 
 
 
