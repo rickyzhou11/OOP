@@ -26,7 +26,7 @@ TestLife: AbstractCell.c++ AbstractCell.h Cell.h ConwayCell.c++ ConwayCell.h Fre
 	g++ -pedantic -std=c++0x -Wall AbstractCell.c++ ConwayCell.c++ FredkinCell.c++ TestLife.c++ -o TestLife -lcppunit -ldl
 
 test: TestLife
-	TestLife
+	TestLife > TestLife.out
 
 testv: TestLife
 	valgrind TestLife

@@ -31,41 +31,87 @@ using namespace std;
 struct TestLife : CppUnit::TestFixture {
  
    // ----------------
-  // Life
+  // TestLife
   // ----------------
 
-    
-    vector<vector<char> > temp_board;
-    vector<vector<char> > temp_board1;
-    vector<char> v(5 , '.');
-    temp_board.push_back(v);
-    temp_board.push_back(v);
-    temp_board.push_back(v);
-    temp[2] = '*';
-    temp_board1.push_back(v); 
-    temp_board1.push_back(v);
-    temp_board1.push_back(v);
+
     
 
     void test_life_constructor_1() {
+      vector<char> v; 
+    for(int i = 0; i < 5; i++)
+      v.push_back('.');
+    
+    vector<vector<char> > temp_board;
+    vector<vector<char> > temp_board1;
+    
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    v[2] = '*';
+    temp_board1.push_back(v); 
+    temp_board1.push_back(v);
+    temp_board1.push_back(v);
     Life<ConwayCell> l(3, 5, temp_board);
     CPPUNIT_ASSERT(l.pop == 0);
 
   }
 
   void test_life_constructor_2() {
+     vector<char> v; 
+    for(int i = 0; i < 5; i++)
+      v.push_back('.');
+    
+    vector<vector<char> > temp_board;
+    vector<vector<char> > temp_board1;
+    
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    v[2] = '*';
+    temp_board1.push_back(v); 
+    temp_board1.push_back(v);
+    temp_board1.push_back(v);
     Life<ConwayCell> l(3, 5, temp_board1);
     CPPUNIT_ASSERT(l.pop == 3);
 
   }
 
   void test_life_constructor_3() {
+     vector<char> v; 
+    for(int i = 0; i < 5; i++)
+      v.push_back('.');
+    
+    vector<vector<char> > temp_board;
+    vector<vector<char> > temp_board1;
+    
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    v[2] = '*';
+    temp_board1.push_back(v); 
+    temp_board1.push_back(v);
+    temp_board1.push_back(v);
     Life<ConwayCell> l(1, 5, temp_board1);
     CPPUNIT_ASSERT(l.pop == 1);
 
   }
 
   void test_life_play_1(){
+     vector<char> v; 
+    for(int i = 0; i < 5; i++)
+      v.push_back('.');
+    
+    vector<vector<char> > temp_board;
+    vector<vector<char> > temp_board1;
+    
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    v[2] = '*';
+    temp_board1.push_back(v); 
+    temp_board1.push_back(v);
+    temp_board1.push_back(v);
     Life<ConwayCell> l(3, 5, temp_board);
     l.play(1);
     l.play(1);
@@ -73,6 +119,20 @@ struct TestLife : CppUnit::TestFixture {
   }
 
   void test_life_play_2(){
+     vector<char> v; 
+    for(int i = 0; i < 5; i++)
+      v.push_back('.');
+    
+    vector<vector<char> > temp_board;
+    vector<vector<char> > temp_board1;
+    
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    v[2] = '*';
+    temp_board1.push_back(v); 
+    temp_board1.push_back(v);
+    temp_board1.push_back(v);
     Life<ConwayCell> l(3, 5, temp_board1);
     l.play(1);
     l.play(1);
@@ -80,6 +140,20 @@ struct TestLife : CppUnit::TestFixture {
   }
 
 void test_life_play_3() {
+   vector<char> v; 
+    for(int i = 0; i < 5; i++)
+      v.push_back('.');
+    
+    vector<vector<char> > temp_board;
+    vector<vector<char> > temp_board1;
+    
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    temp_board.push_back(v);
+    v[2] = '*';
+    temp_board1.push_back(v); 
+    temp_board1.push_back(v);
+    temp_board1.push_back(v);
     Life<ConwayCell> l(1, 5, temp_board1);
     l.play(1);
     l.play(1);
@@ -103,7 +177,7 @@ void test_conway_get_char2(){
 }
 
 void test_conway_get_char3(){
-    ConwayCell c();
+    ConwayCell c('.');
     CPPUNIT_ASSERT(c.get_char() == '.');
 
 }
@@ -121,7 +195,7 @@ void test_conway_is_alive2(){
 }
 
 void test_conway_is_alive3(){
-    ConwayCell c();
+    ConwayCell c('.');
     CPPUNIT_ASSERT(c.is_alive() == false);
 
 }
@@ -141,7 +215,7 @@ void test_conway_set_alive2(){
 }
 
 void test_conway_set_alive3(){
-    ConwayCell c();
+    ConwayCell c('.');
     c.set_alive();
     c.set_alive();
     CPPUNIT_ASSERT(c.is_alive() == false);
@@ -176,12 +250,14 @@ void test_fredkin_is_alive1(){
 
 void test_fredkin_is_alive2(){
     FredkinCell c('-');
+    c.set_alive();
+    c.set_alive();
     CPPUNIT_ASSERT(c.is_alive() == false);
 
 }
 
 void test_fredkin_is_alive3(){
-    FredkinCell c();
+    FredkinCell c('-');
     CPPUNIT_ASSERT(c.is_alive() == false);
 
 }
@@ -201,7 +277,8 @@ void test_fredkin_set_alive2(){
 }
 
 void test_fredkin_set_alive3(){
-    FredkinCell c();
+    FredkinCell c('0');
+    c.set_alive();
     c.set_alive();
     c.set_alive();
     CPPUNIT_ASSERT(c.is_alive() == false);
@@ -214,19 +291,18 @@ void test_fredkin_set_alive3(){
   }
 
   void test_fredkin_cell_increase_age_2() {
-    FredkinCell c("-");
+    FredkinCell c('-');
     c.increase_age();
     c.increase_age();
     c.increase_age();
     c.increase_age();
-    c.increase_age();
-    CPPUNIT_ASSERT(c.age() == 0);
+    CPPUNIT_ASSERT(c.age == 0);
   }
 
   void test_fredkin_cell_increase_age_3() {
-    FredkinCell c("+");
+    FredkinCell c('+');
     c.increase_age();
-    CPPUNIT_ASSERT(c.age() == 1);
+    CPPUNIT_ASSERT(c.age == 1);
   }
 
 
@@ -236,62 +312,53 @@ void test_fredkin_set_alive3(){
   // Cell isAlive
   // ----------------
   void test_cell_is_alive_1() {
-    Cell c = new ConwayCell('.');
+    Cell c('-');
     CPPUNIT_ASSERT(c.is_alive() == false);
   }
 
   void test_cell_is_alive_2() {
-    Cell c = new FredkinCell('-');
+     Cell c('0');
+     c.set_alive();
     CPPUNIT_ASSERT(c.is_alive() == false);
   }
 
   void test_cell_is_alive_3() {
-    Cell c = new ConwayCell('*');
+     Cell c('0');
     CPPUNIT_ASSERT(c.is_alive() == true);
   }
+
 
   // ---------
   // TestSuite
   // ---------
   CPPUNIT_TEST_SUITE(TestLife);
-
-  CPPUNIT_TEST(void test_life_constructor_1);
-  CPPUNIT_TEST(void test_life_constructor_2);
-  CPPUNIT_TEST(void test_life_constructor_3);
-
+  CPPUNIT_TEST(test_life_constructor_1);
+  CPPUNIT_TEST(test_life_constructor_2);
+  CPPUNIT_TEST(test_life_constructor_3);
   CPPUNIT_TEST(test_life_play_1);
   CPPUNIT_TEST(test_life_play_2);
   CPPUNIT_TEST(test_life_play_3);
-
   CPPUNIT_TEST(test_conway_get_char1);
   CPPUNIT_TEST(test_conway_get_char2);
   CPPUNIT_TEST(test_conway_get_char3);
-
   CPPUNIT_TEST(test_conway_is_alive1);
   CPPUNIT_TEST(test_conway_is_alive2);
   CPPUNIT_TEST(test_conway_is_alive3);
-
   CPPUNIT_TEST(test_conway_set_alive1);
   CPPUNIT_TEST(test_conway_set_alive2);
   CPPUNIT_TEST(test_conway_set_alive3);
-
   CPPUNIT_TEST(test_fredkin_get_char1);
   CPPUNIT_TEST(test_fredkin_get_char2);
   CPPUNIT_TEST(test_fredkin_get_char3);
-
   CPPUNIT_TEST(test_fredkin_is_alive1);
   CPPUNIT_TEST(test_fredkin_is_alive2);
   CPPUNIT_TEST(test_fredkin_is_alive3);
-
   CPPUNIT_TEST(test_fredkin_set_alive1);
   CPPUNIT_TEST(test_fredkin_set_alive2);
   CPPUNIT_TEST(test_fredkin_set_alive3);
-
-  
   CPPUNIT_TEST(test_fredkin_cell_increase_age_1);
   CPPUNIT_TEST(test_fredkin_cell_increase_age_2);
   CPPUNIT_TEST(test_fredkin_cell_increase_age_3);
-
   CPPUNIT_TEST(test_cell_is_alive_1);
   CPPUNIT_TEST(test_cell_is_alive_2);
   CPPUNIT_TEST(test_cell_is_alive_3);
