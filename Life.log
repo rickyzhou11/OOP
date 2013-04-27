@@ -1,0 +1,295 @@
+commit 02a38d6ddfdaefe3e24d325656ee79dc91b8bbd6
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Fri Apr 26 18:49:10 2013 -0500
+
+    everything works correctly
+
+commit 8abbb8da8f7772b734252a6562b9032df449ed8d
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Fri Apr 26 18:22:48 2013 -0500
+
+    tests cases working correctly
+
+commit c34ab8b6e8d44efa58fc2c673fa4338bd27cc92f
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Fri Apr 26 17:45:56 2013 -0500
+
+    all files running correctly
+
+commit 8581fecce8f7fa2a6f5dd6bd9f5ded9dd4254efd
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Fri Apr 26 16:51:10 2013 -0500
+
+    most recent
+
+commit 2030d52ce95ac043c0ec55ada1e21dc842c6c3bc
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Fri Apr 26 16:00:18 2013 -0500
+
+    fixed errors in Runlife fredkin and conway but cell and muatate still dont work
+
+commit 8d4a0708dfd5a7efbc1b0f306df4c83f9323c64e
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Thu Apr 25 23:04:59 2013 -0500
+
+    finished unit tests
+
+commit 4ffccbc7adb9e154849a308b81e968e3ae58dbaf
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Thu Apr 25 22:58:10 2013 -0500
+
+    fixed constructor
+
+commit d40a9f09a146f027d46e3ba8f5a4b7252fb8084d
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Thu Apr 25 22:49:55 2013 -0500
+
+    made change to fredkin cell
+
+commit 3d619d31bd1142d65f41ab88052ea8ef384b5215
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Thu Apr 25 22:43:05 2013 -0500
+
+    added unit tests but still have errors
+
+commit 2920aef54fc72b8a35578450e3dbaed082787285
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Thu Apr 25 19:13:15 2013 -0500
+
+    have most functions working
+
+commit 7e735e2f649e610a0473ca585819818a23510686
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 23:36:25 2013 -0500
+
+    fixed most errors
+
+commit 0f65d970f091b077b321f44925228930308df28b
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 21:28:39 2013 -0500
+
+    fixed most errors
+
+commit 719dfbf768e2878ab9608a36ca5f629efd20bc13
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 19:58:23 2013 -0500
+
+    added some changes
+
+commit 8f1adc45349cb71d9db317e072679d9ccc70d035
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 19:31:08 2013 -0500
+
+    made some changes to conway and abstract cell
+
+commit 8aa005dfadfcda117c37bd8e6a3c4845d1df575c
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 19:14:44 2013 -0500
+
+    fixed some errors in life and conway and abstract
+
+commit 6763f893a542f35e5c82acf36dc704c0833082e7
+Merge: c1b5a57 217fedd
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 17:16:08 2013 -0500
+
+    Merge branch 'master' of https://github.com/rickyzhou11/cs371p-life
+
+commit c1b5a57e3fff4cba1be0d02488dbb5be61fdbe2f
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 17:15:33 2013 -0500
+
+    made minor changes
+
+commit 217fedd10c0c32adf41ffe7f3e0075daebc8a164
+Merge: 1a3487a 9328cd2
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Tue Apr 23 16:53:52 2013 -0500
+
+    Merge branch 'master' of https://github.com/rickyzhou11/cs371p-life
+    
+    Conflicts:
+    	Cell.h
+
+commit 1a3487a6967abad27a40d06812f8a1b91db5382e
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Tue Apr 23 16:52:08 2013 -0500
+
+    added Fredkincell
+
+commit 9328cd257c2255b3a549827f23593f15346d64d0
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 16:50:49 2013 -0500
+
+    made some minor changes
+
+commit 44da0b90c7ca3e31716a51be960dc727adc2675c
+Merge: 2cb9901 a7cf179
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 16:26:10 2013 -0500
+
+    :iMerge branch 'master' of https://github.com/rickyzhou11/cs371p-life
+
+commit 2cb9901f0dfeed8da3eab836a2f446a0f7e9fc27
+Merge: f150ca7 ba4cdc9
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 16:25:38 2013 -0500
+
+    made some changes still have errors
+
+commit a7cf1795a5656cf79cbb7d54f61e434af37860d3
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Tue Apr 23 16:22:59 2013 -0500
+
+    change
+
+commit f150ca7ebdbdf39b0799ad4eff7a710391504560
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Tue Apr 23 16:18:17 2013 -0500
+
+    updated some files but still have inherting errors
+
+commit ba4cdc948aaf30d793165d365e9f49e98ba27e39
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Tue Apr 23 16:04:28 2013 -0500
+
+    test cases
+
+commit 1a33dc597b3d674c10623eea38ac31eb31d6d5eb
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Tue Apr 23 15:01:27 2013 -0500
+
+    fixing some of errors
+
+commit 7866f4534ecafe4ca3b9eb5b7a1d95aa65c7a30c
+Merge: e45f095 43ac65d
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Tue Apr 23 14:27:34 2013 -0500
+
+    fixing merge error Merge branch 'master' of https://github.com/rickyzhou11/cs371p-life
+    
+    Conflicts:
+    	AbstractCell.h
+    	ConwayCell.c++
+
+commit e45f0950094ecdcd978557d442734d14bed11bfb
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Mon Apr 22 21:45:33 2013 -0500
+
+    minor changes
+
+commit 43ac65d8b15011ed08457f2e650e23ddcf788036
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Mon Apr 22 21:45:11 2013 -0500
+
+    made some changes
+
+commit 936ca599cd6a26e4f4dbcdcfac7fdfb886dae889
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Mon Apr 22 21:19:22 2013 -0500
+
+    updated files
+
+commit 683874e286c316b36eb5f1e0f49d55dcbe6d660b
+Author: rickyzhou11 <rickyzhou@utexas.edu>
+Date:   Mon Apr 22 21:05:25 2013 -0500
+
+    Update Life.h
+
+commit 819bd38bc04ababb079721971c95e2e876e3d304
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Mon Apr 22 21:00:19 2013 -0500
+
+    fixed some errors in ConwayCell.c++
+
+commit 941d9ce09a2a1df19faff26df538669760576427
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Mon Apr 22 20:21:16 2013 -0500
+
+    first test, nothing works as expected
+
+commit 2d680601fbed24f1d67fd32e369228bf1aebcdb1
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Mon Apr 22 20:01:17 2013 -0500
+
+    updated files
+
+commit 8b81f42ce0509d75708021d7c5a0aefcb0b710e5
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Mon Apr 22 17:54:47 2013 -0500
+
+    output
+
+commit 2cd68f09dfc64252e223eebf1276e1cbac6d9b0f
+Merge: 195a697 49d427b
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Mon Apr 22 17:45:51 2013 -0500
+
+    Merge branch 'master' of https://github.com/rickyzhou11/cs371p-life
+
+commit 195a6970c0675a1a4b57edd9e86c52088ffdcd7a
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Mon Apr 22 17:44:17 2013 -0500
+
+    created the life board
+
+commit 49d427b9a93847e323fd72af377d0f9b3d0a4cd5
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Sun Apr 21 22:06:38 2013 -0500
+
+    added changes to abstract cell
+
+commit b8c175faa5d781d2ac4fb6c04622c0a128b3e4dd
+Merge: 5854c7a fd3c16a
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Sun Apr 21 22:03:04 2013 -0500
+
+    Merge branch 'master' of https://github.com/rickyzhou11/cs371p-life
+
+commit 5854c7a50ffaa60ed805b5248b9a9c167015edbb
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Sun Apr 21 22:02:09 2013 -0500
+
+    added conwaycell
+
+commit fd3c16aac5fabef6cc78aee952474117d5f6af01
+Author: Sohail Alibhai <sa22896@cs.utexas.edu>
+Date:   Sat Apr 20 16:34:52 2013 -0500
+
+    updated cell.h and abstractcell.h
+
+commit 8d01ed917c74020aa898423a8625fa498d0e08e6
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Sat Apr 20 15:25:20 2013 -0500
+
+    made some initial changes
+
+commit e8a479270855b12555f020755f23161010974aa9
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Wed Apr 17 21:50:41 2013 -0500
+
+    minor changes
+
+commit 83180d4af391cc1373d872de1f8f128f1af556ce
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Wed Apr 17 21:42:16 2013 -0500
+
+    added handle.h
+
+commit 572ee1dc354011a41e8fc8d99d35e99ad4c185bd
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Wed Apr 17 21:38:14 2013 -0500
+
+    added new files and stuff
+
+commit 4f04303150c83f230d116622d6d1393f2881ada2
+Author: Chuyu Zhou <rickyzhou@utexas.edu>
+Date:   Wed Apr 17 19:20:44 2013 -0500
+
+    copied some initial files from instructer
+
+commit 939817fab1dee653e68efce86c1320e44bbf89a5
+Author: rickyzhou11 <rickyzhou@utexas.edu>
+Date:   Wed Apr 17 17:11:09 2013 -0700
+
+    Initial commit
